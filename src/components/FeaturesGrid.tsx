@@ -51,7 +51,7 @@ export const FeaturesGrid: React.FC = () => {
                     {features.map((feature, index) => (
                         <div
                             key={index}
-                            className="bg-white p-8 rounded-2xl shadow-sm transition-all duration-300 border border-gray-100 hover:border-blue-900 hover:shadow-[0_0_30px_rgba(91,77,255,0.4)] hover:-translate-y-1"
+                            className="bg-white p-8 rounded-2xl shadow-sm transition-all duration-300 border border-gray-100 hover:border-blue-900 hover:shadow-[0_0_30px_rgba(91,77,255,0.4)] hover:-translate-y-1 hover:bg-blue-50"
                         >
                             <div className="bg-primary/10 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
                                 {feature.icon}
