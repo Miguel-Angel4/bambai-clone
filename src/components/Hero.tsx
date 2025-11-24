@@ -17,16 +17,16 @@ export const Hero: React.FC = () => {
                         </div>
 
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
-                            La alarma de <span className="text-primary">máxima seguridad</span> que puedes dar de baja cuando quieras
+                            Y si quieres, suscríbete a tu alarma <span className="text-primary">sin permanencia</span>
                         </h1>
 
                         <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
-                            Protege tu hogar o negocio con la última tecnología y conexión 24h a la Policía. Sin ataduras ni letra pequeña.
+                            Tu alarma como siempre la has querido: sencilla, flexible y sin permanencia.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 mb-8">
                             <Button size="lg" className="w-full sm:w-auto shadow-lg shadow-primary/30">
-                                Calcula tu cuota
+                                Ver precios
                             </Button>
                             <Button variant="outline" size="lg" className="w-full sm:w-auto border-2">
                                 <Phone className="w-5 h-5 mr-2" />

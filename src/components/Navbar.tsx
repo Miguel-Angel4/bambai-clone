@@ -6,13 +6,10 @@ export const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const navLinks = [
-        { name: 'Hogar', href: '#' },
-        { name: 'Negocio', href: '#' },
-        { name: 'Mayores', href: '#' },
-        { name: 'Vehículos', href: '#' },
-        { name: 'Mascotas', href: '#' },
-        { name: 'Blog', href: '#' },
-        { name: 'Nosotros', href: '#' },
+        { name: 'Precios', href: '#' },
+        { name: 'Soluciones', href: '#' },
+        { name: 'Recursos', href: '#' },
+        { name: 'Contacto', href: '#' },
     ];
 
     return (
@@ -41,16 +38,16 @@ export const Navbar: React.FC = () => {
 
                     {/* Desktop Right Actions */}
                     <div className="hidden lg:flex items-center space-x-6">
-                        <a href="tel:900831671" className="flex items-center text-primary font-bold">
+                        <a href="tel:937379317" className="flex items-center text-primary font-bold">
                             <Phone className="w-4 h-4 mr-2" />
-                            900 831 671
+                            937 379 317
                         </a>
                         <a href="#" className="flex items-center text-gray-600 hover:text-primary font-medium">
                             <User className="w-4 h-4 mr-2" />
                             Área clientes
                         </a>
                         <Button variant="primary" size="md">
-                            Calcula tu cuota
+                            Ver precios
                         </Button>
                     </div>
 
@@ -80,9 +77,9 @@ export const Navbar: React.FC = () => {
                             </a>
                         ))}
                         <div className="mt-4 pt-4 border-t border-gray-100">
-                            <a href="tel:900831671" className="block px-3 py-2 text-primary font-bold">
+                            <a href="tel:937379317" className="block px-3 py-2 text-primary font-bold">
                                 <Phone className="w-4 h-4 inline mr-2" />
-                                900 831 671
+                                937 379 317
                             </a>
                             <a href="#" className="block px-3 py-2 text-gray-600 font-medium">
                                 <User className="w-4 h-4 inline mr-2" />
@@ -90,7 +87,7 @@ export const Navbar: React.FC = () => {
                             </a>
                             <div className="px-3 py-2">
                                 <Button variant="primary" className="w-full">
-                                    Calcula tu cuota
+                                    Ver precios
                                 </Button>
                             </div>
                         </div>
