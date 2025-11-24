@@ -1,58 +1,118 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Check, Info } from 'lucide-react';
 import { Button } from './Button';
 
-const plans = [
-    {
-        name: 'Básica',
-        price: '39,99',
-        features: [
-            '1 Panel central',
-            '1 Detector de movimiento',
-            '1 Detector de apertura',
-            '1 Mando a distancia',
-            'Carteles disuasorios',
-            'App móvil ilimitada',
-            'Conexión 24h a CRA',
-            'Aviso a Policía'
-        ],
-        highlight: false
-    },
-    {
-        name: 'Estándar y 1 cámara',
-        price: '44,99',
-        features: [
-            '1 Panel central',
-            '1 Cámara Wifi con streaming',
-            '1 Detector de movimiento',
-            '1 Detector de apertura',
-            '1 Mando a distancia',
-            'Carteles disuasorios',
-            'App móvil ilimitada',
-            'Conexión 24h a CRA',
-            'Aviso a Policía'
-        ],
-        highlight: true
-    },
-    {
-        name: 'Estándar y dos cámaras',
-        price: '54,99',
-        features: [
-            '1 Panel central',
-            '2 Cámaras Wifi con streaming',
-            '2 Detectores de movimiento',
-            '1 Detector de apertura',
-            '1 Mando a distancia',
-            'Carteles disuasorios',
-            'App móvil ilimitada',
-            'Conexión 24h a CRA',
-            'Aviso a Policía'
-        ],
-        highlight: false
-    }
-];
+const plansData = {
+    sinPermanencia: [
+        {
+            name: 'Básica',
+            price: '39,99',
+            features: [
+                '1 Panel central',
+                '1 Detector de movimiento',
+                '1 Detector de apertura',
+                '1 Mando a distancia',
+                'Carteles disuasorios',
+                'App móvil ilimitada',
+                'Conexión 24h a CRA',
+                'Aviso a Policía'
+            ],
+            highlight: false
+        },
+        {
+            name: 'Estándar y 1 cámara',
+            price: '44,99',
+            features: [
+                '1 Panel central',
+                '1 Cámara Wifi con streaming',
+                '1 Detector de movimiento',
+                '1 Detector de apertura',
+                '1 Mando a distancia',
+                'Carteles disuasorios',
+                'App móvil ilimitada',
+                'Conexión 24h a CRA',
+                'Aviso a Policía'
+            ],
+            highlight: true
+        },
+        {
+            name: 'Estándar y dos cámaras',
+            price: '54,99',
+            features: [
+                '1 Panel central',
+                '2 Cámaras Wifi con streaming',
+                '2 Detectores de movimiento',
+                '1 Detector de apertura',
+                '1 Mando a distancia',
+                'Carteles disuasorios',
+                'App móvil ilimitada',
+                'Conexión 24h a CRA',
+                'Aviso a Policía'
+            ],
+            highlight: false
+        }
+    ],
+    indefinida: [
+        {
+            name: 'Básica',
+            price: '19,99',
+            features: [
+                '1 Panel central',
+                '1 Detector de movimiento',
+                '1 Detector de apertura',
+                '1 Mando a distancia',
+                'Carteles disuasorios',
+                'App móvil ilimitada',
+                'Conexión 24h a CRA',
+                'Aviso a Policía',
+                'Periodo mínimo 9 meses'
+            ],
+            highlight: false,
+            badge: '¡Ahórrate 20€ al mes!'
+        },
+        {
+            name: 'Estándar y 1 cámara',
+            price: '24,99',
+            features: [
+                '1 Panel central',
+                '1 Cámara Wifi con streaming',
+                '1 Detector de movimiento',
+                '1 Detector de apertura',
+                '1 Mando a distancia',
+                'Carteles disuasorios',
+                'App móvil ilimitada',
+                'Conexión 24h a CRA',
+                'Aviso a Policía',
+                'Periodo mínimo 9 meses'
+            ],
+            highlight: true,
+            badge: '¡Ahórrate 20€ al mes!'
+        },
+        {
+            name: 'Estándar y dos cámaras',
+            price: '34,99',
+            features: [
+                '1 Panel central',
+                '2 Cámaras Wifi con streaming',
+                '2 Detectores de movimiento',
+                '1 Detector de apertura',
+                '1 Mando a distancia',
+                'Carteles disuasorios',
+                'App móvil ilimitada',
+                'Conexión 24h a CRA',
+                'Aviso a Policía',
+                'Periodo mínimo 9 meses'
+            ],
+            highlight: false,
+            badge: '¡Ahórrate 20€ al mes!'
+        }
+    ]
+};
 
 export const Prices: React.FC = () => {
+    const [selectedPlan, setSelectedPlan] = useState<'sinPermanencia' | 'indefinida'>('sinPermanencia');
+    const plans = plansData[selectedPlan];
+
     return (
         <div className="bg-gray-50 min-h-screen py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,12 +124,24 @@ export const Prices: React.FC = () => {
                         Elige el plan que mejor se adapte a ti. Sin permanencia, sin letra pequeña.
                     </p>
 
-                    {/* Toggle (Visual only for now as requested default is Sin Permanencia) */}
+                    {/* Toggle */}
                     <div className="inline-flex bg-white p-1 rounded-full border border-gray-200 mb-8">
-                        <button className="px-6 py-2 rounded-full bg-primary text-white font-medium shadow-sm">
+                        <button
+                            onClick={() => setSelectedPlan('sinPermanencia')}
+                            className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${selectedPlan === 'sinPermanencia'
+                                    ? 'bg-primary text-white shadow-sm'
+                                    : 'text-gray-600 hover:bg-gray-50'
+                                }`}
+                        >
                             Alarma Sin Permanencia
                         </button>
-                        <button className="px-6 py-2 rounded-full text-gray-600 font-medium hover:bg-gray-50">
+                        <button
+                            onClick={() => setSelectedPlan('indefinida')}
+                            className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${selectedPlan === 'indefinida'
+                                    ? 'bg-primary text-white shadow-sm'
+                                    : 'text-gray-600 hover:bg-gray-50'
+                                }`}
+                        >
                             Alarma Indefinida
                         </button>
                     </div>
@@ -85,6 +157,14 @@ export const Prices: React.FC = () => {
                                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                     <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide">
                                         Más popular
+                                    </span>
+                                </div>
+                            )}
+
+                            {plan.badge && (
+                                <div className="absolute -top-3 -right-3">
+                                    <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                                        {plan.badge}
                                     </span>
                                 </div>
                             )}
