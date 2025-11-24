@@ -71,69 +71,22 @@ export const Prices: React.FC = () => {
                         </button>
                         <button className="px-6 py-2 rounded-full text-gray-600 font-medium hover:bg-gray-50">
                             Alarma Indefinida
-                        </button>
+                            IVA incluido
+                        </p>
                     </div>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {plans.map((plan, index) => (
-                        <div
-                            key={index}
-                            className={`relative bg-white rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 ${plan.highlight
-                                    ? 'border-2 border-primary shadow-xl shadow-primary/10'
-                                    : 'border border-gray-200 shadow-lg hover:shadow-xl'
-                                }`}
-                        >
-                            {plan.highlight && (
-                                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                                    <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide">
-                                        Más popular
-                                    </span>
-                                </div>
-                            )}
-
-                            <h3 className="text-2xl font-bold text-gray-900 mb-4">{plan.name}</h3>
-
-                            <div className="flex items-baseline mb-8">
-                                <span className="text-5xl font-extrabold text-gray-900">{plan.price}</span>
-                                <span className="text-xl font-medium text-gray-500 ml-2">€/mes</span>
-                            </div>
-
-                            <ul className="space-y-4 mb-8">
-                                {plan.features.map((feature, i) => (
-                                    <li key={i} className="flex items-start">
-                                        <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-600">{feature}</span>
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <div className="mt-auto">
-                                <Button
-                                    variant={plan.highlight ? 'primary' : 'outline'}
-                                    className="w-full justify-center"
-                                    size="lg"
-                                >
-                                    Contratar ahora
-                                </Button>
-                                <p className="text-center text-xs text-gray-400 mt-4 flex items-center justify-center">
-                                    <Info className="w-3 h-3 mr-1" />
-                                    IVA incluido
-                                </p>
-                            </div>
-                        </div>
                     ))}
-                </div>
+            </div>
 
-                <div className="mt-16 text-center">
-                    <p className="text-gray-600">
-                        ¿Necesitas una configuración personalizada?
-                        <a href="tel:937379317" className="text-primary font-bold ml-2 hover:underline">
-                            Llámanos al 937 379 317
-                        </a>
-                    </p>
-                </div>
+            <div className="mt-16 text-center">
+                <p className="text-gray-600">
+                    ¿Necesitas una configuración personalizada?
+                    <a href="tel:937379317" className="text-primary font-bold ml-2 hover:underline">
+                        Llámanos al 937 379 317
+                    </a>
+                </p>
             </div>
         </div>
+        </div >
     );
 };
