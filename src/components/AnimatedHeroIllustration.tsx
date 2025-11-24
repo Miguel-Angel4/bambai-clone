@@ -26,7 +26,7 @@ export const AnimatedHeroIllustration = () => {
                 <motion.path
                     d="M250 50 L400 120 V250 C400 350 340 420 250 450 C160 420 100 350 100 250 V120 L250 50 Z"
                     fill="none"
-                    stroke="#5B4DFF"
+                    stroke="#5a00c2ff"
                     strokeWidth="2"
                     strokeOpacity="0.2"
                     initial={{ pathLength: 0 }}
@@ -41,7 +41,7 @@ export const AnimatedHeroIllustration = () => {
                         cx={250}
                         cy={250}
                         r={60 + i * 30}
-                        stroke="#5B4DFF"
+                        stroke="#2d8600ff"
                         strokeWidth="1"
                         strokeOpacity="0.1"
                         fill="none"
@@ -62,10 +62,10 @@ export const AnimatedHeroIllustration = () => {
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1, delay: 0.5, type: "spring" }}
                 >
-                    <circle cx="250" cy="250" r="40" fill="#5B4DFF" fillOpacity="0.1" />
+                    <circle cx="250" cy="250" r="40" fill="#74ff4dff" fillOpacity="0.1" />
                     <motion.path
                         d="M250 220 L270 240 L250 280 L230 240 Z"
-                        fill="#5B4DFF"
+                        fill="#5a00c2ff"
                         animate={{
                             y: [-5, 5, -5],
                         }}
@@ -83,7 +83,7 @@ export const AnimatedHeroIllustration = () => {
                     y1="120"
                     x2="400"
                     y2="120"
-                    stroke="#5B4DFF"
+                    stroke="#a880f2ff"
                     strokeWidth="2"
                     strokeLinecap="round"
                     animate={{
@@ -103,7 +103,7 @@ export const AnimatedHeroIllustration = () => {
                     <motion.circle
                         key={`p-${i}`}
                         r="4"
-                        fill="#5B4DFF"
+                        fill="#0700d2ff"
                         initial={{
                             x: 250 + (Math.random() - 0.5) * 200,
                             y: 250 + (Math.random() - 0.5) * 200,
