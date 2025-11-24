@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Check, Info } from 'lucide-react';
 import { Button } from './Button';
+// v1.1 - Toggle funcional entre planes
 
 const plansData = {
     sinPermanencia: [
@@ -129,8 +130,8 @@ export const Prices: React.FC = () => {
                         <button
                             onClick={() => setSelectedPlan('sinPermanencia')}
                             className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${selectedPlan === 'sinPermanencia'
-                                    ? 'bg-primary text-white shadow-sm'
-                                    : 'text-gray-600 hover:bg-gray-50'
+                                ? 'bg-primary text-white shadow-sm'
+                                : 'text-gray-600 hover:bg-gray-50'
                                 }`}
                         >
                             Alarma Sin Permanencia
@@ -138,8 +139,8 @@ export const Prices: React.FC = () => {
                         <button
                             onClick={() => setSelectedPlan('indefinida')}
                             className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${selectedPlan === 'indefinida'
-                                    ? 'bg-primary text-white shadow-sm'
-                                    : 'text-gray-600 hover:bg-gray-50'
+                                ? 'bg-primary text-white shadow-sm'
+                                : 'text-gray-600 hover:bg-gray-50'
                                 }`}
                         >
                             Alarma Indefinida
