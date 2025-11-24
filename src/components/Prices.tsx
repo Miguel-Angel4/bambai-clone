@@ -3,7 +3,15 @@ import { Check, Info } from 'lucide-react';
 import { Button } from './Button';
 // v1.1 - Toggle funcional entre planes
 
-const plansData = {
+type Plan = {
+    name: string;
+    price: string;
+    features: string[];
+    highlight: boolean;
+    badge?: string;
+};
+
+const plansData: Record<'sinPermanencia' | 'indefinida', Plan[]> = {
     sinPermanencia: [
         {
             name: 'Básica',
