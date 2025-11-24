@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, Phone, User } from 'lucide-react';
 import { Button } from './Button';
 
@@ -6,7 +7,7 @@ export const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const navLinks = [
-        { name: 'Precios', href: '#' },
+        { name: 'Precios', href: '/precios' },
         { name: 'Soluciones', href: '#' },
         { name: 'Recursos', href: '#' },
         { name: 'Contacto', href: '#' },
@@ -18,21 +19,31 @@ export const Navbar: React.FC = () => {
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center">
-                        <a href="/" className="text-3xl font-bold text-primary tracking-tighter">
+                        <Link to="/" className="text-3xl font-bold text-primary tracking-tighter">
                             bambai
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Desktop Navigation */}
                     <div className="hidden lg:flex items-center space-x-8">
                         {navLinks.map((link) => (
-                            <a
-                                key={link.name}
-                                href={link.href}
-                                className="text-gray-600 hover:text-primary font-medium text-sm transition-colors"
-                            >
-                                {link.name}
-                            </a>
+                            link.href.startsWith('/') ? (
+                                <Link
+                                    key={link.name}
+                                    to={link.href}
+                                    className="text-gray-600 hover:text-primary font-medium text-sm transition-colors"
+                                >
+                                    {link.name}
+                                </Link>
+                            ) : (
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    className="text-gray-600 hover:text-primary font-medium text-sm transition-colors"
+                                >
+                                    {link.name}
+                                </a>
+                            )
                         ))}
                     </div>
 
@@ -68,13 +79,23 @@ export const Navbar: React.FC = () => {
                 <div className="lg:hidden bg-white border-t">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         {navLinks.map((link) => (
-                            <a
-                                key={link.name}
-                                href={link.href}
-                                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
-                            >
-                                {link.name}
-                            </a>
+                            link.href.startsWith('/') ? (
+                                <Link
+                                    key={link.name}
+                                    to={link.href}
+                                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
+                                >
+                                    {link.name}
+                                </Link>
+                            ) : (
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
+                                >
+                                    {link.name}
+                                </a>
+                            )
                         ))}
                         <div className="mt-4 pt-4 border-t border-gray-100">
                             <a href="tel:937379317" className="block px-3 py-2 text-primary font-bold">
