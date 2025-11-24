@@ -35,9 +35,9 @@ export const Footer: React.FC = () => {
                     <div>
                         <h4 className="text-lg font-bold mb-6">Producto</h4>
                         <ul className="space-y-4">
-                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Hogar</a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Negocio</a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Cómo funciona</a></li>
+                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Alarmas para casa</a></li>
+                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Sensores y detectores</a></li>
+                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Alarmas según aplicación</a></li>
                             <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Precios</a></li>
                         </ul>
                     </div>
@@ -45,10 +45,10 @@ export const Footer: React.FC = () => {
                     <div>
                         <h4 className="text-lg font-bold mb-6">Compañía</h4>
                         <ul className="space-y-4">
-                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Sobre nosotros</a></li>
+                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Valores</a></li>
+                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Preguntas frecuentes</a></li>
                             <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
                             <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Trabaja con nosotros</a></li>
                         </ul>
                     </div>
 
@@ -58,7 +58,7 @@ export const Footer: React.FC = () => {
                         <ul className="space-y-4">
                             <li className="flex items-start">
                                 <span className="text-gray-400">Teléfono:</span>
-                                <a href="tel:900831671" className="ml-2 text-white hover:text-primary transition-colors">900 831 671</a>
+                                <a href="tel:937379317" className="ml-2 text-white hover:text-primary transition-colors">937 379 317</a>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-gray-400">Email:</span>
