@@ -1,4 +1,4 @@
-import i18n from 'i18next';
+import i18n from 'i18next'; // i18n configuration
 import { initReactI18next } from 'react-i18next';
 
 const resources = {
