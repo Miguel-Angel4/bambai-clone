@@ -6,6 +6,7 @@ import { Testimonials } from './components/Testimonials';
 import { Footer } from './components/Footer';
 import { Prices } from './components/Prices';
 import { HomeAlarms } from './components/HomeAlarms';
+import { MotionSensors } from './components/MotionSensors';
 
 function HomePage() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/precios" element={<Prices />} />
             <Route path="/alarmas-casa" element={<HomeAlarms />} />
+            <Route path="/sensores-detectores" element={<MotionSensors />} />
           </Routes>
         </main>
         <Footer />
