@@ -19,8 +19,16 @@ export const Navbar: React.FC = () => {
                 { name: 'Alarmas según su espacio', href: '/alarmas-espacio' },
             ]
         },
-        { name: 'Recursos', href: '#' },
-        { name: 'Contacto', href: '#' },
+        {
+            name: 'Recursos',
+            href: '#',
+            dropdown: [
+                { name: 'Valores', href: '#' },
+                { name: 'Preguntas frecuentes', href: '#' },
+                { name: 'Blog', href: '#' },
+                { name: 'Contacto', href: '#' },
+            ]
+        },
     ];
 
     return (
