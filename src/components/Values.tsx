@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heart, Shield, Users, Lightbulb, Smile } from 'lucide-react';
+import { ValuesBackground } from './ValuesBackground';
 
 export const Values: React.FC = () => {
     const valuesList = [
@@ -11,9 +12,11 @@ export const Values: React.FC = () => {
     ];
 
     return (
-        <div className="bg-white">
+        <div className="bg-white relative min-h-screen overflow-hidden">
+            <ValuesBackground />
+
             {/* Hero Section */}
-            <section className="bg-gradient-to-br from-primary/5 via-white to-primary/10 py-20">
+            <section className="relative z-10 bg-transparent py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
                         Valores Bambai
@@ -25,7 +28,7 @@ export const Values: React.FC = () => {
             </section>
 
             {/* Main Content */}
-            <section className="py-20">
+            <section className="relative z-10 py-20">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="prose prose-lg mx-auto text-gray-600 leading-relaxed">
                         <p className="mb-8 text-xl font-medium text-gray-800">
