@@ -10,6 +10,9 @@ import { MotionSensors } from './components/MotionSensors';
 import { AlarmsByApplication } from './components/AlarmsByApplication';
 import { AlarmsBySpace } from './components/AlarmsBySpace';
 import { Values } from './components/Values';
+import { FAQ } from './components/FAQ';
+import { Blog } from './components/Blog';
+import { Contact } from './components/Contact';
 
 function HomePage() {
   return (
@@ -35,6 +38,9 @@ function App() {
             <Route path="/alarmas-aplicacion" element={<AlarmsByApplication />} />
             <Route path="/alarmas-espacio" element={<AlarmsBySpace />} />
             <Route path="/valores" element={<Values />} />
+            <Route path="/preguntas-frecuentes" element={<FAQ />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contacto" element={<Contact />} />
           </Routes>
         </main>
         <div className="relative z-10">
