@@ -12,7 +12,7 @@ export const Values: React.FC = () => {
     ];
 
     return (
-        <div className="bg-white relative min-h-screen overflow-hidden">
+        <div className="relative min-h-screen">
             <ValuesBackground />
 
             {/* Hero Section */}
