@@ -9,11 +9,11 @@ export const Navbar: React.FC = () => {
 
     const navLinks = [
         { name: 'Precios', href: '/precios' },
-        { 
-            name: 'Soluciones', 
+        {
+            name: 'Soluciones',
             href: '#',
             dropdown: [
-                { name: 'Alarmas para casa', href: '#' },
+                { name: 'Alarmas para casa', href: '/alarmas-casa' },
                 { name: 'Sensores y detectores de movimiento', href: '#' },
                 { name: 'Alarmas según su aplicación', href: '#' },
                 { name: 'Alarmas según su estado', href: '#' },
@@ -37,8 +37,8 @@ export const Navbar: React.FC = () => {
                     {/* Desktop Navigation */}
                     <div className="hidden lg:flex items-center space-x-8">
                         {navLinks.map((link) => (
-                            <div 
-                                key={link.name} 
+                            <div
+                                key={link.name}
                                 className="relative"
                                 onMouseEnter={() => link.dropdown && setActiveDropdown(link.name)}
                                 onMouseLeave={() => link.dropdown && setActiveDropdown(null)}
@@ -63,13 +63,23 @@ export const Navbar: React.FC = () => {
                                 {link.dropdown && activeDropdown === link.name && (
                                     <div className="absolute top-full left-0 w-64 bg-white shadow-lg rounded-md py-2 mt-1 border border-gray-100">
                                         {link.dropdown.map((item) => (
-                                            <a
-                                                key={item.name}
-                                                href={item.href}
-                                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary"
-                                            >
-                                                {item.name}
-                                            </a>
+                                            item.href.startsWith('/') ? (
+                                                <Link
+                                                    key={item.name}
+                                                    to={item.href}
+                                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary"
+                                                >
+                                                    {item.name}
+                                                </Link>
+                                            ) : (
+                                                <a
+                                                    key={item.name}
+                                                    href={item.href}
+                                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary"
+                                                >
+                                                    {item.name}
+                                                </a>
+                                            )
                                         ))}
                                     </div>
                                 )}
@@ -129,13 +139,23 @@ export const Navbar: React.FC = () => {
                                 {link.dropdown && (
                                     <div className="pl-4 space-y-1">
                                         {link.dropdown.map((item) => (
-                                            <a
-                                                key={item.name}
-                                                href={item.href}
-                                                className="block px-3 py-2 rounded-md text-sm font-medium text-gray-500 hover:text-primary hover:bg-gray-50"
-                                            >
-                                                {item.name}
-                                            </a>
+                                            item.href.startsWith('/') ? (
+                                                <Link
+                                                    key={item.name}
+                                                    to={item.href}
+                                                    className="block px-3 py-2 rounded-md text-sm font-medium text-gray-500 hover:text-primary hover:bg-gray-50"
+                                                >
+                                                    {item.name}
+                                                </Link>
+                                            ) : (
+                                                <a
+                                                    key={item.name}
+                                                    href={item.href}
+                                                    className="block px-3 py-2 rounded-md text-sm font-medium text-gray-500 hover:text-primary hover:bg-gray-50"
+                                                >
+                                                    {item.name}
+                                                </a>
+                                            )
                                         ))}
                                     </div>
                                 )}

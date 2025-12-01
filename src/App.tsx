@@ -5,6 +5,7 @@ import { FeaturesGrid } from './components/FeaturesGrid';
 import { Testimonials } from './components/Testimonials';
 import { Footer } from './components/Footer';
 import { Prices } from './components/Prices';
+import { HomeAlarms } from './components/HomeAlarms';
 
 function HomePage() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/precios" element={<Prices />} />
+            <Route path="/alarmas-casa" element={<HomeAlarms />} />
           </Routes>
         </main>
         <Footer />
