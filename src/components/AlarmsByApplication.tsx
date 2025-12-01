@@ -1,6 +1,7 @@
 import React from 'react';
 import { Shield, Lock, Radio, Brain, Phone, ArrowRight } from 'lucide-react';
 import { Button } from './Button';
+import { ValuesBackground } from './ValuesBackground';
 
 export const AlarmsByApplication: React.FC = () => {
     const alarmTypes = [
@@ -42,21 +43,23 @@ export const AlarmsByApplication: React.FC = () => {
     ];
 
     return (
-        <div className="bg-white">
+        <div className="relative min-h-screen">
+            <ValuesBackground />
+
             {/* Hero Section */}
-            <section className="bg-gradient-to-br from-primary/5 via-white to-primary/10 py-20">
+            <section className="relative z-10 bg-transparent py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-4xl mx-auto">
-                        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                             Alarmas según su aplicación
                         </h1>
-                        <p className="text-xl md:text-2xl text-gray-600 mb-8">
+                        <p className="text-xl md:text-2xl text-blue-100 mb-8">
                             Tu alarma como siempre la has querido
                         </p>
-                        <p className="text-lg text-gray-600 mb-10">
+                        <p className="text-lg text-blue-100 mb-10">
                             Sencilla, económica y sin permanencia. Bambai te ofrece seguridad honesta y con valores.
                         </p>
-                        <Button variant="primary" size="lg">
+                        <Button variant="primary" size="lg" className="shadow-lg shadow-primary/30">
                             Ver precios
                         </Button>
                     </div>
@@ -64,13 +67,13 @@ export const AlarmsByApplication: React.FC = () => {
             </section>
 
             {/* Alarm Types Section */}
-            <section className="py-20 bg-white">
+            <section className="relative z-10 py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                             Tipos de alarmas según su aplicación
                         </h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                        <p className="text-lg text-blue-100 max-w-3xl mx-auto">
                             Encuentra la solución de seguridad perfecta para tus necesidades específicas
                         </p>
                     </div>
@@ -81,31 +84,31 @@ export const AlarmsByApplication: React.FC = () => {
                             return (
                                 <div
                                     key={index}
-                                    className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-primary overflow-hidden"
+                                    className="group relative bg-white/5 backdrop-blur-md rounded-2xl p-8 shadow-xl hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] transition-all duration-500 border border-white/10 hover:border-primary/50 overflow-hidden hover:-translate-y-2 hover:bg-white/10"
                                 >
                                     {/* Gradient Background on Hover */}
-                                    <div className={`absolute inset-0 bg-gradient-to-br ${alarm.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+                                    <div className={`absolute inset-0 bg-gradient-to-br ${alarm.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
 
                                     {/* Icon */}
                                     <div className="relative mb-6">
-                                        <div className={`w-16 h-16 bg-gradient-to-br ${alarm.color} rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
+                                        <div className={`w-16 h-16 bg-gradient-to-br ${alarm.color} rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500 shadow-lg`}>
                                             <Icon className="w-8 h-8 text-white" />
                                         </div>
                                     </div>
 
                                     {/* Content */}
                                     <div className="relative">
-                                        <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors">
+                                        <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-primary-300 transition-colors">
                                             {alarm.title}
                                         </h3>
-                                        <p className="text-gray-600 leading-relaxed mb-6">
+                                        <p className="text-blue-100 leading-relaxed mb-6">
                                             {alarm.description}
                                         </p>
 
                                         {/* CTA Link */}
                                         <a
                                             href={alarm.href}
-                                            className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-4 transition-all duration-300"
+                                            className="inline-flex items-center gap-2 text-primary-300 font-semibold group-hover:gap-4 group-hover:text-primary-200 transition-all duration-300"
                                         >
                                             Más información
                                             <ArrowRight className="w-5 h-5" />
@@ -119,41 +122,41 @@ export const AlarmsByApplication: React.FC = () => {
             </section>
 
             {/* Features Section */}
-            <section className="py-20 bg-gray-50">
+            <section className="relative z-10 py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <Shield className="w-8 h-8 text-primary" />
+                        <div className="text-center group">
+                            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300">
+                                <Shield className="w-8 h-8 text-primary-300 group-hover:text-primary-200" />
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-3">
+                            <h3 className="text-xl font-bold text-white mb-3">
                                 Protección completa
                             </h3>
-                            <p className="text-gray-600">
+                            <p className="text-blue-100">
                                 Sistemas diseñados para cada necesidad específica de seguridad
                             </p>
                         </div>
 
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <Brain className="w-8 h-8 text-primary" />
+                        <div className="text-center group">
+                            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300">
+                                <Brain className="w-8 h-8 text-primary-300 group-hover:text-primary-200" />
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-3">
+                            <h3 className="text-xl font-bold text-white mb-3">
                                 Tecnología avanzada
                             </h3>
-                            <p className="text-gray-600">
+                            <p className="text-blue-100">
                                 Soluciones inteligentes con las últimas innovaciones en seguridad
                             </p>
                         </div>
 
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <Phone className="w-8 h-8 text-primary" />
+                        <div className="text-center group">
+                            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300">
+                                <Phone className="w-8 h-8 text-primary-300 group-hover:text-primary-200" />
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-3">
+                            <h3 className="text-xl font-bold text-white mb-3">
                                 Soporte 24/7
                             </h3>
-                            <p className="text-gray-600">
+                            <p className="text-blue-100">
                                 Asistencia continua y conexión con autoridades cuando lo necesites
                             </p>
                         </div>
@@ -162,8 +165,8 @@ export const AlarmsByApplication: React.FC = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20 bg-primary">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <section className="relative z-10 py-20">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-primary/20 backdrop-blur-md border border-primary/30 rounded-3xl p-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                         ¿No sabes qué alarma elegir?
                     </h2>
@@ -171,11 +174,11 @@ export const AlarmsByApplication: React.FC = () => {
                         Nuestro equipo te ayudará a encontrar la solución perfecta para tu hogar o negocio
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button variant="secondary" size="lg">
+                        <Button variant="primary" size="lg" className="shadow-lg shadow-primary/40">
                             Ver todos los planes
                         </Button>
                         <a href="tel:937379317">
-                            <Button variant="outline" size="lg" className="bg-white text-primary hover:bg-gray-100 border-white">
+                            <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
                                 Llamar al 937 379 317
                             </Button>
                         </a>

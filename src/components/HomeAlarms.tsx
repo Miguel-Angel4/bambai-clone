@@ -1,6 +1,7 @@
 import React from 'react';
 import { Check, Shield, Clock, Smartphone, Wrench } from 'lucide-react';
 import { Button } from './Button';
+import { ValuesBackground } from './ValuesBackground';
 
 export const HomeAlarms: React.FC = () => {
     const pricingPlans = [
@@ -96,22 +97,24 @@ export const HomeAlarms: React.FC = () => {
     ];
 
     return (
-        <div className="bg-white">
+        <div className="relative min-h-screen">
+            <ValuesBackground />
+
             {/* Hero Section */}
-            <section className="bg-gradient-to-br from-primary/5 via-white to-primary/10 py-20">
+            <section className="relative z-10 bg-transparent py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-4xl mx-auto">
-                        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                             Alarmas de seguridad para casa, hogar y vivienda
                         </h1>
-                        <p className="text-xl md:text-2xl text-gray-600 mb-8">
-                            Planes desde <span className="text-primary font-bold">19,99 €/mes</span>
+                        <p className="text-xl md:text-2xl text-blue-100 mb-8">
+                            Planes desde <span className="text-primary-300 font-bold">19,99 €/mes</span>
                         </p>
-                        <p className="text-lg text-gray-600 mb-10">
-                            En Bambai creemos que la seguridad no tiene por qué ser cara ni esconder sorpresas. 
+                        <p className="text-lg text-blue-100 mb-10">
+                            En Bambai creemos que la seguridad no tiene por qué ser cara ni esconder sorpresas.
                             Nuestras alarmas para casa están pensadas para ser accesibles, claras y sin letra pequeña.
                         </p>
-                        <Button variant="primary" size="lg">
+                        <Button variant="primary" size="lg" className="shadow-lg shadow-primary/30">
                             Ver precios
                         </Button>
                     </div>
@@ -119,15 +122,15 @@ export const HomeAlarms: React.FC = () => {
             </section>
 
             {/* Pricing Plans Section */}
-            <section className="py-20 bg-gray-50">
+            <section className="relative z-10 py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                             Planes de alarmas para casa desde 19,99 €/mes
                         </h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                            En Bambai tenemos claro que la seguridad no debería costar un dineral ni obligarte a firmar 
-                            contratos interminables. Eliges el nivel de seguridad que mejor encaje contigo y con tu vivienda, 
+                        <p className="text-lg text-blue-100 max-w-3xl mx-auto">
+                            En Bambai tenemos claro que la seguridad no debería costar un dineral ni obligarte a firmar
+                            contratos interminables. Eliges el nivel de seguridad que mejor encaje contigo y con tu vivienda,
                             pagando solo por lo que de verdad necesitas.
                         </p>
                     </div>
@@ -136,55 +139,54 @@ export const HomeAlarms: React.FC = () => {
                         {pricingPlans.map((plan, index) => (
                             <div
                                 key={index}
-                                className={`relative bg-white rounded-2xl p-8 transition-all duration-300 border-2 shadow-lg hover:shadow-xl hover:-translate-y-2 ${
-                                    plan.highlight
-                                        ? 'border-primary shadow-primary/20'
-                                        : 'border-gray-200 hover:border-primary'
-                                }`}
+                                className={`relative bg-white/5 backdrop-blur-md rounded-2xl p-8 transition-all duration-500 border shadow-xl hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] hover:-translate-y-2 hover:bg-white/10 ${plan.highlight
+                                        ? 'border-primary/50 shadow-primary/20 ring-2 ring-primary/30'
+                                        : 'border-white/10 hover:border-primary/50'
+                                    }`}
                             >
                                 {plan.highlight && (
                                     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                                        <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide">
+                                        <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg shadow-primary/40">
                                             Más popular
                                         </span>
                                     </div>
                                 )}
 
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                                <p className="text-sm text-gray-600 mb-6">{plan.subtitle}</p>
+                                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-primary-300 transition-colors">{plan.name}</h3>
+                                <p className="text-sm text-blue-200 mb-6">{plan.subtitle}</p>
 
                                 <div className="flex items-baseline mb-2">
-                                    <span className="text-5xl font-extrabold text-gray-900">{plan.price}</span>
-                                    <span className="text-xl font-medium text-gray-500 ml-2">€/mes</span>
+                                    <span className="text-5xl font-extrabold text-white">{plan.price}</span>
+                                    <span className="text-xl font-medium text-blue-200 ml-2">€/mes</span>
                                 </div>
-                                <p className="text-sm text-gray-500 mb-6">{plan.period}</p>
+                                <p className="text-sm text-blue-300 mb-6">{plan.period}</p>
 
                                 <ul className="space-y-3 mb-6">
                                     {plan.features.map((feature, i) => (
                                         <li key={i} className="flex items-start">
-                                            <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                                            <span className="text-gray-700">{feature}</span>
+                                            <Check className="w-5 h-5 text-primary-400 mr-3 flex-shrink-0 mt-0.5" />
+                                            <span className="text-blue-100">{feature}</span>
                                         </li>
                                     ))}
                                 </ul>
 
-                                <p className="text-sm text-gray-600 mb-6 italic">{plan.description}</p>
+                                <p className="text-sm text-blue-200 mb-6 italic">{plan.description}</p>
 
                                 <Button
                                     variant={plan.highlight ? 'primary' : 'outline'}
-                                    className="w-full justify-center"
+                                    className={`w-full justify-center ${!plan.highlight ? 'border-white/20 text-white hover:bg-primary hover:text-white hover:border-primary' : ''}`}
                                     size="lg"
                                 >
                                     Contratar ahora
                                 </Button>
-                                <p className="text-center text-xs text-gray-400 mt-4">IVA incluido</p>
+                                <p className="text-center text-xs text-blue-300/60 mt-4">IVA incluido</p>
                             </div>
                         ))}
                     </div>
 
                     <div className="mt-12 text-center">
-                        <p className="text-gray-600">
-                            Todos nuestros planes incluyen instalación gratuita, mantenimiento, soporte 24/7 
+                        <p className="text-blue-200">
+                            Todos nuestros planes incluyen instalación gratuita, mantenimiento, soporte 24/7
                             y asistencia inmediata para que puedas avisar a la policía en caso de incidencia.
                         </p>
                     </div>
@@ -192,23 +194,23 @@ export const HomeAlarms: React.FC = () => {
             </section>
 
             {/* Pricing Transparency Section */}
-            <section className="py-20 bg-white">
+            <section className="relative z-10 py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                             Precios justos y transparentes
                         </h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                            La idea es sencilla: proteger tu hogar con precios que cualquiera pueda asumir 
+                        <p className="text-lg text-blue-100 max-w-3xl mx-auto">
+                            La idea es sencilla: proteger tu hogar con precios que cualquiera pueda asumir
                             y con un servicio completo que ya lo incluye todo.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {transparencyPoints.map((point, index) => (
-                            <div key={index} className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">{point.title}</h3>
-                                <p className="text-gray-600">{point.description}</p>
+                            <div key={index} className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+                                <h3 className="text-xl font-bold text-white mb-3">{point.title}</h3>
+                                <p className="text-blue-100">{point.description}</p>
                             </div>
                         ))}
                     </div>
@@ -216,15 +218,15 @@ export const HomeAlarms: React.FC = () => {
             </section>
 
             {/* Features Section */}
-            <section className="py-20 bg-gray-50">
+            <section className="relative z-10 py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                             Características de nuestras alarmas de seguridad
                         </h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                            En Bambai creemos que las alarmas para casa tienen que ser fáciles, claras y accesibles. 
-                            El sistema está pensado para que tengas tranquilidad desde el primer minuto, 
+                        <p className="text-lg text-blue-100 max-w-3xl mx-auto">
+                            En Bambai creemos que las alarmas para casa tienen que ser fáciles, claras y accesibles.
+                            El sistema está pensado para que tengas tranquilidad desde el primer minuto,
                             sin instalaciones invasivas ni complicaciones técnicas.
                         </p>
                     </div>
@@ -233,15 +235,15 @@ export const HomeAlarms: React.FC = () => {
                         {features.map((feature, index) => {
                             const Icon = feature.icon;
                             return (
-                                <div key={index} className="flex gap-6">
+                                <div key={index} className="flex gap-6 group">
                                     <div className="flex-shrink-0">
-                                        <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center">
-                                            <Icon className="w-7 h-7 text-primary" />
+                                        <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                                            <Icon className="w-7 h-7 text-primary-300 group-hover:text-primary-200" />
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                                        <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                                        <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                                        <p className="text-blue-100 leading-relaxed">{feature.description}</p>
                                     </div>
                                 </div>
                             );
@@ -251,8 +253,8 @@ export const HomeAlarms: React.FC = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20 bg-primary">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <section className="relative z-10 py-20">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-primary/20 backdrop-blur-md border border-primary/30 rounded-3xl p-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                         ¿Listo para proteger tu hogar?
                     </h2>
@@ -260,11 +262,11 @@ export const HomeAlarms: React.FC = () => {
                         Contrata tu alarma hoy y empieza a disfrutar de la tranquilidad que mereces
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button variant="secondary" size="lg">
+                        <Button variant="primary" size="lg" className="shadow-lg shadow-primary/40">
                             Ver todos los planes
                         </Button>
                         <a href="tel:937379317">
-                            <Button variant="outline" size="lg" className="bg-white text-primary hover:bg-gray-100 border-white">
+                            <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
                                 Llamar al 937 379 317
                             </Button>
                         </a>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Check, Camera, Shield, Home, Building2, Warehouse, Caravan, MapPin, PawPrint, Lightbulb } from 'lucide-react';
 import { Button } from './Button';
+import { ValuesBackground } from './ValuesBackground';
 
 export const MotionSensors: React.FC = () => {
     const housingTypes = [
@@ -108,23 +109,25 @@ export const MotionSensors: React.FC = () => {
     ];
 
     return (
-        <div className="bg-white">
+        <div className="relative min-h-screen">
+            <ValuesBackground />
+
             {/* Hero Section */}
-            <section className="bg-gradient-to-br from-primary/5 via-white to-primary/10 py-20">
+            <section className="relative z-10 bg-transparent py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-4xl mx-auto">
-                        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                             Sensores y detectores de movimiento
                         </h1>
-                        <p className="text-xl md:text-2xl text-gray-600 mb-8">
+                        <p className="text-xl md:text-2xl text-blue-100 mb-8">
                             Protección eficaz, fácil de instalar y con aviso inmediato al móvil
                         </p>
-                        <p className="text-lg text-gray-600 mb-10">
+                        <p className="text-lg text-blue-100 mb-10">
                             Las alarmas con detectores de movimiento son el corazón de cualquier sistema de seguridad moderno.
                             En Bambai nuestros detectores están pensados para reaccionar en segundos y avisarte al instante,
                             sin esperas, sin complicaciones y, por supuesto, sin permanencias.
                         </p>
-                        <Button variant="primary" size="lg">
+                        <Button variant="primary" size="lg" className="shadow-lg shadow-primary/30">
                             Ver precios
                         </Button>
                     </div>
@@ -132,13 +135,13 @@ export const MotionSensors: React.FC = () => {
             </section>
 
             {/* Housing Types Section */}
-            <section className="py-20 bg-white">
+            <section className="relative z-10 py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                             Detectores de movimiento según el tipo de vivienda
                         </h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                        <p className="text-lg text-blue-100 max-w-3xl mx-auto">
                             Cada tipo de vivienda necesita una distribución y una tecnología diferente.
                             No se trata de llenar la casa de sensores, sino de colocarlos donde de verdad sirven
                             y aprovechar al máximo su alcance.
@@ -149,16 +152,16 @@ export const MotionSensors: React.FC = () => {
                         {housingTypes.map((type, index) => {
                             const Icon = type.icon;
                             return (
-                                <div key={index} className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+                                <div key={index} className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
                                     <div className="flex items-start gap-4 mb-4">
                                         <div className="flex-shrink-0">
-                                            <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                                                <Icon className="w-6 h-6 text-primary" />
+                                            <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                                                <Icon className="w-6 h-6 text-primary-300" />
                                             </div>
                                         </div>
-                                        <h3 className="text-xl font-bold text-gray-900">{type.title}</h3>
+                                        <h3 className="text-xl font-bold text-white">{type.title}</h3>
                                     </div>
-                                    <p className="text-gray-600 leading-relaxed">{type.description}</p>
+                                    <p className="text-blue-100 leading-relaxed">{type.description}</p>
                                 </div>
                             );
                         })}
@@ -167,25 +170,25 @@ export const MotionSensors: React.FC = () => {
             </section>
 
             {/* Placement Tips Section */}
-            <section className="py-20 bg-gray-50">
+            <section className="relative z-10 py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                             Dónde colocar los sensores de movimiento para proteger de verdad
                         </h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                        <p className="text-lg text-blue-100 max-w-3xl mx-auto">
                             La ubicación de los detectores de movimiento es tan importante como su calidad.
                             Un sensor bien colocado puede cubrir una habitación entera; uno mal situado puede dejar zonas sin vigilancia.
                         </p>
                     </div>
 
                     <div className="max-w-4xl mx-auto">
-                        <div className="bg-white rounded-2xl p-8 shadow-lg">
+                        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 shadow-xl">
                             <ul className="space-y-4">
                                 {placementTips.map((tip, index) => (
                                     <li key={index} className="flex items-start gap-4">
-                                        <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                                        <span className="text-gray-700 leading-relaxed">{tip}</span>
+                                        <MapPin className="w-6 h-6 text-primary-400 flex-shrink-0 mt-1" />
+                                        <span className="text-blue-100 leading-relaxed">{tip}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -195,31 +198,31 @@ export const MotionSensors: React.FC = () => {
             </section>
 
             {/* Pets Section */}
-            <section className="py-20 bg-white">
+            <section className="relative z-10 py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row items-center gap-12">
                         <div className="flex-1">
-                            <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-                                <PawPrint className="w-10 h-10 text-primary" />
+                            <div className="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
+                                <PawPrint className="w-10 h-10 text-primary-300" />
                             </div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                                 Si tienes mascotas, esto te interesa
                             </h2>
-                            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                            <p className="text-lg text-blue-100 mb-6 leading-relaxed">
                                 Las mascotas y los sensores de movimiento siempre han tenido una relación complicada,
                                 pero eso es cosa del pasado. Los detectores de movimiento actuales son capaces de
                                 diferenciar entre una persona y un animal pequeño (hasta unos 20 kilos).
                                 Si tu perro o tu gato se mueve por casa, el sistema lo ignora.
                             </p>
-                            <p className="text-lg text-gray-600 leading-relaxed">
+                            <p className="text-lg text-blue-100 leading-relaxed">
                                 En Bambai, además, contamos con packs especiales para hogares con mascotas.
                                 Combinamos detectores de apertura en puertas y ventanas con cámaras interiores,
                                 para que, si salta una alerta, puedas comprobar en segundos si ha sido tu mascota o algo más serio.
                             </p>
                         </div>
                         <div className="flex-1">
-                            <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-12 text-center">
-                                <PawPrint className="w-32 h-32 text-primary/30 mx-auto" />
+                            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-12 text-center">
+                                <PawPrint className="w-32 h-32 text-primary-300/50 mx-auto" />
                             </div>
                         </div>
                     </div>
@@ -227,13 +230,13 @@ export const MotionSensors: React.FC = () => {
             </section>
 
             {/* Selection Tips Section */}
-            <section className="py-20 bg-gray-50">
+            <section className="relative z-10 py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                             Consejos para acertar al elegir tus detectores de movimiento
                         </h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                        <p className="text-lg text-blue-100 max-w-3xl mx-auto">
                             Antes de decidirte, hay algunos detalles que merece la pena tener en cuenta
                         </p>
                     </div>
@@ -242,12 +245,12 @@ export const MotionSensors: React.FC = () => {
                         {selectionTips.map((tip, index) => {
                             const Icon = tip.icon;
                             return (
-                                <div key={index} className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                                <div key={index} className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
                                     <div className="flex items-start gap-4">
-                                        <Icon className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                                        <Icon className="w-6 h-6 text-primary-300 flex-shrink-0 mt-1" />
                                         <div>
-                                            <h3 className="text-lg font-bold text-gray-900 mb-2">{tip.title}</h3>
-                                            <p className="text-gray-600">{tip.description}</p>
+                                            <h3 className="text-lg font-bold text-white mb-2">{tip.title}</h3>
+                                            <p className="text-blue-100">{tip.description}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -258,21 +261,21 @@ export const MotionSensors: React.FC = () => {
             </section>
 
             {/* Camera Sensors Section */}
-            <section className="py-20 bg-white">
+            <section className="relative z-10 py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                             Sensores de movimiento con cámara
                         </h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+                        <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8">
                             Los sensores de movimiento con cámara son la evolución natural de los sistemas de seguridad domésticos.
                             No solo detectan lo que pasa, sino que también te lo muestran al instante.
                         </p>
-                        <div className="bg-primary/5 rounded-2xl p-8 max-w-4xl mx-auto">
-                            <h3 className="text-xl font-bold text-gray-900 mb-4">
+                        <div className="bg-primary/20 backdrop-blur-md border border-primary/30 rounded-2xl p-8 max-w-4xl mx-auto">
+                            <h3 className="text-xl font-bold text-white mb-4">
                                 Cómo funcionan los sensores de movimiento con cámara
                             </h3>
-                            <p className="text-gray-700 leading-relaxed">
+                            <p className="text-blue-100 leading-relaxed">
                                 Un sensor de movimiento con cámara detecta cualquier cambio en el espacio que vigila y,
                                 en cuanto lo percibe, activa la cámara y te envía una notificación al móvil.
                                 En ese momento puedes ver en directo qué ha ocurrido y decidir cómo actuar.
@@ -283,46 +286,46 @@ export const MotionSensors: React.FC = () => {
                     </div>
 
                     <div className="mb-16">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+                        <h3 className="text-2xl font-bold text-white mb-8 text-center">
                             Ventajas de los detectores de movimiento con cámara
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {cameraAdvantages.map((advantage, index) => (
-                                <div key={index} className="bg-gray-50 rounded-xl p-6">
+                                <div key={index} className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors">
                                     <div className="flex items-center gap-3 mb-3">
-                                        <Camera className="w-5 h-5 text-primary flex-shrink-0" />
-                                        <h4 className="font-bold text-gray-900">{advantage.title}</h4>
+                                        <Camera className="w-5 h-5 text-primary-300 flex-shrink-0" />
+                                        <h4 className="font-bold text-white">{advantage.title}</h4>
                                     </div>
-                                    <p className="text-sm text-gray-600 leading-relaxed">{advantage.description}</p>
+                                    <p className="text-sm text-blue-100 leading-relaxed">{advantage.description}</p>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 md:p-12">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                    <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-12">
+                        <h3 className="text-2xl font-bold text-white mb-6">
                             Cuándo conviene instalar sensores de movimiento con cámara
                         </h3>
-                        <p className="text-gray-700 mb-6 leading-relaxed">
+                        <p className="text-blue-100 mb-6 leading-relaxed">
                             Los sensores de movimiento con cámara no son imprescindibles para todos los hogares,
                             pero sí muy recomendables en muchos casos. Te convienen especialmente si:
                         </p>
                         <ul className="space-y-3">
                             <li className="flex items-start gap-3">
-                                <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                                <span className="text-gray-700">Pasas gran parte del día fuera y quieres comprobar visualmente que todo está bien.</span>
+                                <Check className="w-5 h-5 text-primary-400 flex-shrink-0 mt-1" />
+                                <span className="text-blue-100">Pasas gran parte del día fuera y quieres comprobar visualmente que todo está bien.</span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                                <span className="text-gray-700">Tienes una casa amplia, con varias plantas o entradas.</span>
+                                <Check className="w-5 h-5 text-primary-400 flex-shrink-0 mt-1" />
+                                <span className="text-blue-100">Tienes una casa amplia, con varias plantas o entradas.</span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                                <span className="text-gray-700">Quieres reducir al mínimo las falsas alarmas por mascotas o movimientos ambientales.</span>
+                                <Check className="w-5 h-5 text-primary-400 flex-shrink-0 mt-1" />
+                                <span className="text-blue-100">Quieres reducir al mínimo las falsas alarmas por mascotas o movimientos ambientales.</span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                                <span className="text-gray-700">Buscas una solución flexible y moderna, sin depender de contratos largos ni instalaciones complicadas.</span>
+                                <Check className="w-5 h-5 text-primary-400 flex-shrink-0 mt-1" />
+                                <span className="text-blue-100">Buscas una solución flexible y moderna, sin depender de contratos largos ni instalaciones complicadas.</span>
                             </li>
                         </ul>
                     </div>
@@ -330,79 +333,79 @@ export const MotionSensors: React.FC = () => {
             </section>
 
             {/* How Bambai System Works */}
-            <section className="py-20 bg-gray-50">
+            <section className="relative z-10 py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                             Cómo funciona el sistema de Bambai
                         </h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                        <p className="text-lg text-blue-100 max-w-3xl mx-auto">
                             El sistema se basa en una idea muy sencilla: un panel central conectado con distintos
                             sensores y detectores de movimiento colocados en puntos estratégicos de la vivienda.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                        <div className="bg-white rounded-xl p-8 shadow-md">
-                            <h3 className="text-xl font-bold text-gray-900 mb-4">
+                        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-8 shadow-md">
+                            <h3 className="text-xl font-bold text-white mb-4">
                                 Cuando se detecta un movimiento
                             </h3>
                             <ol className="space-y-3">
                                 <li className="flex items-start gap-3">
-                                    <span className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
-                                    <span className="text-gray-700">El panel comprueba si la alarma está activada.</span>
+                                    <span className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg shadow-primary/30">1</span>
+                                    <span className="text-blue-100">El panel comprueba si la alarma está activada.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
-                                    <span className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
-                                    <span className="text-gray-700">Si lo está, te envía una notificación inmediata a la app.</span>
+                                    <span className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg shadow-primary/30">2</span>
+                                    <span className="text-blue-100">Si lo está, te envía una notificación inmediata a la app.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
-                                    <span className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">3</span>
-                                    <span className="text-gray-700">Si hay cámaras instaladas, puedes ver en directo lo que está pasando.</span>
+                                    <span className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg shadow-primary/30">3</span>
+                                    <span className="text-blue-100">Si hay cámaras instaladas, puedes ver en directo lo que está pasando.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
-                                    <span className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">4</span>
-                                    <span className="text-gray-700">Si confirmas que no eres tú, el sistema te guía para contactar con la policía.</span>
+                                    <span className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg shadow-primary/30">4</span>
+                                    <span className="text-blue-100">Si confirmas que no eres tú, el sistema te guía para contactar con la policía.</span>
                                 </li>
                             </ol>
                         </div>
 
-                        <div className="bg-white rounded-xl p-8 shadow-md">
-                            <h3 className="text-xl font-bold text-gray-900 mb-4">
+                        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-8 shadow-md">
+                            <h3 className="text-xl font-bold text-white mb-4">
                                 Instalación sencilla
                             </h3>
-                            <p className="text-gray-700 mb-4">
+                            <p className="text-blue-100 mb-4">
                                 Una de las ventajas de Bambai es que todo se instala en casa sin complicaciones.
                                 No necesitas técnicos ni herramientas.
                             </p>
                             <ul className="space-y-3">
                                 <li className="flex items-start gap-3">
-                                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                                    <span className="text-gray-700">Coloca el panel central en una zona con buena cobertura móvil.</span>
+                                    <Check className="w-5 h-5 text-primary-400 flex-shrink-0 mt-0.5" />
+                                    <span className="text-blue-100">Coloca el panel central en una zona con buena cobertura móvil.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
-                                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                                    <span className="text-gray-700">Sitúa los sensores y detectores de movimiento en entradas, pasillos o zonas comunes.</span>
+                                    <Check className="w-5 h-5 text-primary-400 flex-shrink-0 mt-0.5" />
+                                    <span className="text-blue-100">Sitúa los sensores y detectores de movimiento en entradas, pasillos o zonas comunes.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
-                                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                                    <span className="text-gray-700">Conéctalo a la app y comprueba que todo funciona correctamente.</span>
+                                    <Check className="w-5 h-5 text-primary-400 flex-shrink-0 mt-0.5" />
+                                    <span className="text-blue-100">Conéctalo a la app y comprueba que todo funciona correctamente.</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+                    <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-12 shadow-lg">
+                        <h3 className="text-2xl font-bold text-white mb-8 text-center">
                             Qué hace diferente a Bambai
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {systemFeatures.map((feature, index) => (
                                 <div key={index} className="flex items-start gap-3">
-                                    <Shield className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                                    <Shield className="w-6 h-6 text-primary-300 flex-shrink-0 mt-1" />
                                     <div>
-                                        <h4 className="font-bold text-gray-900 mb-1">{feature.title}</h4>
-                                        <p className="text-sm text-gray-600">{feature.description}</p>
+                                        <h4 className="font-bold text-white mb-1">{feature.title}</h4>
+                                        <p className="text-sm text-blue-100">{feature.description}</p>
                                     </div>
                                 </div>
                             ))}
@@ -412,8 +415,8 @@ export const MotionSensors: React.FC = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20 bg-primary">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <section className="relative z-10 py-20">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-primary/20 backdrop-blur-md border border-primary/30 rounded-3xl p-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                         Tu alarma para casa como siempre la has querido
                     </h2>
@@ -421,11 +424,11 @@ export const MotionSensors: React.FC = () => {
                         Sencilla, económica y sin permanencia
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button variant="secondary" size="lg">
+                        <Button variant="primary" size="lg" className="shadow-lg shadow-primary/40">
                             Ver todos los planes
                         </Button>
                         <a href="tel:937379317">
-                            <Button variant="outline" size="lg" className="bg-white text-primary hover:bg-gray-100 border-white">
+                            <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
                                 Llamar al 937 379 317
                             </Button>
                         </a>

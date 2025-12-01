@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Check, Info } from 'lucide-react';
 import { Button } from './Button';
+import { ValuesBackground } from './ValuesBackground';
 // v1.1 - Toggle funcional entre planes
 
 type Plan = {
@@ -123,23 +124,24 @@ export const Prices: React.FC = () => {
     const plans = plansData[selectedPlan];
 
     return (
-        <div className="bg-gray-50 min-h-screen py-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative min-h-screen py-20">
+            <ValuesBackground />
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
                         Precios justos
                     </h1>
-                    <p className="text-xl text-gray-600 mb-8">
+                    <p className="text-xl text-blue-100 mb-8">
                         Elige el plan que mejor se adapte a ti. Sin permanencia, sin letra pequeña.
                     </p>
 
                     {/* Toggle */}
-                    <div className="inline-flex bg-white p-1 rounded-full border border-gray-200 mb-8">
+                    <div className="inline-flex bg-white/10 backdrop-blur-md p-1 rounded-full border border-white/20 mb-8">
                         <button
                             onClick={() => setSelectedPlan('sinPermanencia')}
                             className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${selectedPlan === 'sinPermanencia'
-                                ? 'bg-primary text-white shadow-sm'
-                                : 'text-gray-600 hover:bg-gray-50'
+                                ? 'bg-primary text-white shadow-lg shadow-primary/30'
+                                : 'text-blue-200 hover:bg-white/5 hover:text-white'
                                 }`}
                         >
                             Alarma Sin Permanencia
@@ -147,8 +149,8 @@ export const Prices: React.FC = () => {
                         <button
                             onClick={() => setSelectedPlan('indefinida')}
                             className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${selectedPlan === 'indefinida'
-                                ? 'bg-primary text-white shadow-sm'
-                                : 'text-gray-600 hover:bg-gray-50'
+                                ? 'bg-primary text-white shadow-lg shadow-primary/30'
+                                : 'text-blue-200 hover:bg-white/5 hover:text-white'
                                 }`}
                         >
                             Alarma Indefinida
@@ -160,11 +162,12 @@ export const Prices: React.FC = () => {
                     {plans.map((plan, index) => (
                         <div
                             key={index}
-                            className="group relative bg-white rounded-2xl p-8 transition-all duration-300 border border-gray-200 shadow-lg hover:shadow-xl hover:-translate-y-2 hover:border-2 hover:border-primary hover:shadow-primary/10"
+                            className={`group relative bg-white/5 backdrop-blur-md rounded-2xl p-8 transition-all duration-500 border border-white/10 shadow-xl hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] hover:-translate-y-2 hover:border-primary/50 hover:bg-white/10 ${plan.highlight ? 'ring-2 ring-primary/50' : ''
+                                }`}
                         >
                             {plan.highlight && (
                                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                                    <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide">
+                                    <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg shadow-primary/40">
                                         Más popular
                                     </span>
                                 </div>
@@ -172,24 +175,24 @@ export const Prices: React.FC = () => {
 
                             {plan.badge && (
                                 <div className="absolute -top-3 -right-3">
-                                    <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                                    <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg shadow-green-500/30">
                                         {plan.badge}
                                     </span>
                                 </div>
                             )}
 
-                            <h3 className="text-2xl font-bold text-gray-900 mb-4">{plan.name}</h3>
+                            <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-primary-300 transition-colors">{plan.name}</h3>
 
                             <div className="flex items-baseline mb-8">
-                                <span className="text-5xl font-extrabold text-gray-900">{plan.price}</span>
-                                <span className="text-xl font-medium text-gray-500 ml-2">€/mes</span>
+                                <span className="text-5xl font-extrabold text-white">{plan.price}</span>
+                                <span className="text-xl font-medium text-blue-200 ml-2">€/mes</span>
                             </div>
 
                             <ul className="space-y-4 mb-8">
                                 {plan.features.map((feature, i) => (
                                     <li key={i} className="flex items-start">
-                                        <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-600">{feature}</span>
+                                        <Check className="w-5 h-5 text-primary-400 mr-3 flex-shrink-0 mt-0.5" />
+                                        <span className="text-blue-100">{feature}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -197,12 +200,12 @@ export const Prices: React.FC = () => {
                             <div className="mt-auto">
                                 <Button
                                     variant="outline"
-                                    className="w-full justify-center group-hover:bg-primary group-hover:text-white group-hover:border-primary"
+                                    className="w-full justify-center border-white/20 text-white hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
                                     size="lg"
                                 >
                                     Contratar ahora
                                 </Button>
-                                <p className="text-center text-xs text-gray-400 mt-4 flex items-center justify-center">
+                                <p className="text-center text-xs text-blue-300/60 mt-4 flex items-center justify-center">
                                     <Info className="w-3 h-3 mr-1" />
                                     IVA incluido
                                 </p>
@@ -212,9 +215,9 @@ export const Prices: React.FC = () => {
                 </div>
 
                 <div className="mt-16 text-center">
-                    <p className="text-gray-600">
+                    <p className="text-blue-200">
                         ¿Necesitas una configuración personalizada?
-                        <a href="tel:937379317" className="text-primary font-bold ml-2 hover:underline">
+                        <a href="tel:937379317" className="text-white font-bold ml-2 hover:text-primary-300 transition-colors">
                             Llámanos al 937 379 317
                         </a>
                     </p>
