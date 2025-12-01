@@ -7,6 +7,7 @@ import { Footer } from './components/Footer';
 import { Prices } from './components/Prices';
 import { HomeAlarms } from './components/HomeAlarms';
 import { MotionSensors } from './components/MotionSensors';
+import { AlarmsByApplication } from './components/AlarmsByApplication';
 
 function HomePage() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/precios" element={<Prices />} />
             <Route path="/alarmas-casa" element={<HomeAlarms />} />
             <Route path="/sensores-detectores" element={<MotionSensors />} />
+            <Route path="/alarmas-aplicacion" element={<AlarmsByApplication />} />
           </Routes>
         </main>
         <Footer />
