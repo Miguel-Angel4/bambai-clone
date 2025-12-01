@@ -37,7 +37,9 @@ function App() {
             <Route path="/valores" element={<Values />} />
           </Routes>
         </main>
-        <Footer />
+        <div className="relative z-10">
+          <Footer />
+        </div>
       </div>
     </Router>
   );

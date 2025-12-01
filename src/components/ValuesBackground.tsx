@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export const ValuesBackground = () => {
     return (
-        <div className="fixed inset-0 overflow-hidden pointer-events-none select-none -z-10">
+        <div className="fixed inset-0 overflow-hidden pointer-events-none select-none z-0">
             {/* Gradient Background Base */}
             <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white" />
 
