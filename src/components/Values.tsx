@@ -65,12 +65,12 @@ export const Values: React.FC = () => {
                             {valuesList.map((value, index) => {
                                 const Icon = value.icon;
                                 return (
-                                    <div key={index} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center hover:bg-white/20 transition-all duration-300">
-                                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                            <Icon className="w-6 h-6 text-white" />
+                                    <div key={index} className="group bg-black/30 backdrop-blur-md border border-white/10 rounded-xl p-6 text-center transition-all duration-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] hover:border-purple-500/50 hover:bg-purple-900/20 hover:-translate-y-1">
+                                        <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-500/20 transition-colors duration-500">
+                                            <Icon className="w-6 h-6 text-gray-300 group-hover:text-purple-300 transition-colors duration-500" />
                                         </div>
-                                        <h3 className="font-bold text-white mb-2">{value.title}</h3>
-                                        <p className="text-sm text-white/80">{value.description}</p>
+                                        <h3 className="font-bold text-white mb-2 group-hover:text-purple-100 transition-colors duration-500">{value.title}</h3>
+                                        <p className="text-sm text-gray-400 group-hover:text-purple-200/80 transition-colors duration-500">{value.description}</p>
                                     </div>
                                 );
                             })}
