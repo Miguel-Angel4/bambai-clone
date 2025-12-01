@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 export const ValuesBackground = () => {
     return (
         <div className="fixed inset-0 overflow-hidden pointer-events-none select-none z-0">
-            {/* Dark Blue Gradient Background Base */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1120] via-[#0F172A] to-[#172554]" />
+            {/* Medium Blue Gradient Background Base */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#1e3a8a] via-[#1e40af] to-[#2563eb]" />
 
             {/* Circular Ripples / Waves */}
             <svg
