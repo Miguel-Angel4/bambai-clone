@@ -8,6 +8,7 @@ import { Prices } from './components/Prices';
 import { HomeAlarms } from './components/HomeAlarms';
 import { MotionSensors } from './components/MotionSensors';
 import { AlarmsByApplication } from './components/AlarmsByApplication';
+import { AlarmsBySpace } from './components/AlarmsBySpace';
 
 function HomePage() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/alarmas-casa" element={<HomeAlarms />} />
             <Route path="/sensores-detectores" element={<MotionSensors />} />
             <Route path="/alarmas-aplicacion" element={<AlarmsByApplication />} />
+            <Route path="/alarmas-espacio" element={<AlarmsBySpace />} />
           </Routes>
         </main>
         <Footer />

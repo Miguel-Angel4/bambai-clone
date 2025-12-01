@@ -16,7 +16,7 @@ export const Navbar: React.FC = () => {
                 { name: 'Alarmas para casa', href: '/alarmas-casa' },
                 { name: 'Sensores y detectores de movimiento', href: '/sensores-detectores' },
                 { name: 'Alarmas según su aplicación', href: '/alarmas-aplicacion' },
-                { name: 'Alarmas según su estado', href: '#' },
+                { name: 'Alarmas según su estado', href: '/alarmas-espacio' },
             ]
         },
         { name: 'Recursos', href: '#' },
