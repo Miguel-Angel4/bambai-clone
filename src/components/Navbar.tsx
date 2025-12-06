@@ -50,7 +50,7 @@ export const Navbar = () => {
                 <div className="flex justify-between h-16">
                     <div className="flex items-center">
                         <Link to="/" className="flex-shrink-0 flex items-center">
-                            <img src="/img/Logo.png" alt="Bambai" className="h-10" />
+                            <img src="/Logo.png" alt="Bambai" className="h-10" />
                         </Link>
                     </div>
 
