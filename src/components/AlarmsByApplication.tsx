@@ -1,42 +1,44 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Shield, Lock, Radio, Brain, Phone, ArrowRight } from 'lucide-react';
 import { Button } from './Button';
 import { ValuesBackground } from './ValuesBackground';
 
 export const AlarmsByApplication: React.FC = () => {
+    const { t } = useTranslation();
     const alarmTypes = [
         {
             icon: Lock,
-            title: 'Alarmas anti okupas',
-            description: 'Protección específica contra ocupaciones ilegales. Sistema de detección temprana que te avisa ante cualquier intento de acceso no autorizado a tu propiedad.',
+            title: t('alarms_application.types.squatters_title'),
+            description: t('alarms_application.types.squatters_desc'),
             href: '#',
             color: 'from-red-500 to-red-600'
         },
         {
             icon: Shield,
-            title: 'Alarmas cableadas sin cuotas',
-            description: 'Sistemas de seguridad con conexión por cable, sin necesidad de pagar cuotas mensuales. Instalación profesional y control total de tu sistema.',
+            title: t('alarms_application.types.wired_title'),
+            description: t('alarms_application.types.wired_desc'),
             href: '#',
             color: 'from-blue-500 to-blue-600'
         },
         {
             icon: Radio,
-            title: 'Alarmas anti inhibidores',
-            description: 'Tecnología avanzada que detecta y neutraliza intentos de inhibición de señal. Protección garantizada incluso ante ataques sofisticados.',
+            title: t('alarms_application.types.inhibitors_title'),
+            description: t('alarms_application.types.inhibitors_desc'),
             href: '#',
             color: 'from-purple-500 to-purple-600'
         },
         {
             icon: Brain,
-            title: 'Alarmas inteligentes',
-            description: 'Sistemas conectados con inteligencia artificial que aprenden de tus rutinas. Control total desde tu smartphone con notificaciones en tiempo real.',
+            title: t('alarms_application.types.smart_title'),
+            description: t('alarms_application.types.smart_desc'),
             href: '#',
             color: 'from-green-500 to-green-600'
         },
         {
             icon: Phone,
-            title: 'Alarmas conectadas a la policía',
-            description: 'Conexión directa con las autoridades para una respuesta rápida. Sistema verificado que garantiza la intervención policial cuando más lo necesitas.',
+            title: t('alarms_application.types.police_title'),
+            description: t('alarms_application.types.police_desc'),
             href: '#',
             color: 'from-orange-500 to-orange-600'
         }
@@ -51,16 +53,16 @@ export const AlarmsByApplication: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-4xl mx-auto">
                         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                            Alarmas según su aplicación
+                            {t('alarms_application.hero_title')}
                         </h1>
                         <p className="text-xl md:text-2xl text-blue-100 mb-8">
-                            Tu alarma como siempre la has querido
+                            {t('alarms_application.hero_subtitle')}
                         </p>
                         <p className="text-lg text-blue-100 mb-10">
-                            Sencilla, económica y sin permanencia. Bambai te ofrece seguridad honesta y con valores.
+                            {t('alarms_application.hero_desc')}
                         </p>
                         <Button variant="primary" size="lg" className="shadow-lg shadow-primary/30">
-                            Ver precios
+                            {t('alarms_application.cta_button')}
                         </Button>
                     </div>
                 </div>
@@ -71,10 +73,10 @@ export const AlarmsByApplication: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                            Tipos de alarmas según su aplicación
+                            {t('alarms_application.types_title')}
                         </h2>
                         <p className="text-lg text-blue-100 max-w-3xl mx-auto">
-                            Encuentra la solución de seguridad perfecta para tus necesidades específicas
+                            {t('alarms_application.types_desc')}
                         </p>
                     </div>
 
@@ -110,7 +112,7 @@ export const AlarmsByApplication: React.FC = () => {
                                             href={alarm.href}
                                             className="inline-flex items-center gap-2 text-primary-300 font-semibold group-hover:gap-4 group-hover:text-primary-200 transition-all duration-300"
                                         >
-                                            Más información
+                                            {t('alarms_application.more_info')}
                                             <ArrowRight className="w-5 h-5" />
                                         </a>
                                     </div>
@@ -130,10 +132,10 @@ export const AlarmsByApplication: React.FC = () => {
                                 <Shield className="w-8 h-8 text-primary-300 group-hover:text-primary-200" />
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">
-                                Protección completa
+                                {t('alarms_application.features.protection_title')}
                             </h3>
                             <p className="text-blue-100">
-                                Sistemas diseñados para cada necesidad específica de seguridad
+                                {t('alarms_application.features.protection_desc')}
                             </p>
                         </div>
 
@@ -142,10 +144,10 @@ export const AlarmsByApplication: React.FC = () => {
                                 <Brain className="w-8 h-8 text-primary-300 group-hover:text-primary-200" />
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">
-                                Tecnología avanzada
+                                {t('alarms_application.features.technology_title')}
                             </h3>
                             <p className="text-blue-100">
-                                Soluciones inteligentes con las últimas innovaciones en seguridad
+                                {t('alarms_application.features.technology_desc')}
                             </p>
                         </div>
 
@@ -154,10 +156,10 @@ export const AlarmsByApplication: React.FC = () => {
                                 <Phone className="w-8 h-8 text-primary-300 group-hover:text-primary-200" />
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">
-                                Soporte 24/7
+                                {t('alarms_application.features.support_title')}
                             </h3>
                             <p className="text-blue-100">
-                                Asistencia continua y conexión con autoridades cuando lo necesites
+                                {t('alarms_application.features.support_desc')}
                             </p>
                         </div>
                     </div>
@@ -168,18 +170,18 @@ export const AlarmsByApplication: React.FC = () => {
             <section className="relative z-10 py-20">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-primary/20 backdrop-blur-md border border-primary/30 rounded-3xl p-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                        ¿No sabes qué alarma elegir?
+                        {t('alarms_application.final_cta_title')}
                     </h2>
                     <p className="text-xl text-white/90 mb-8">
-                        Nuestro equipo te ayudará a encontrar la solución perfecta para tu hogar o negocio
+                        {t('alarms_application.final_cta_desc')}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button variant="primary" size="lg" className="shadow-lg shadow-primary/40">
-                            Ver todos los planes
+                            {t('alarms_application.final_cta_button')}
                         </Button>
                         <a href="tel:937379317">
                             <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
-                                Llamar al 937 379 317
+                                {t('alarms_application.final_cta_call')}
                             </Button>
                         </a>
                     </div>

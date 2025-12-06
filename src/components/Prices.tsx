@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Check, Info } from 'lucide-react';
 import { Button } from './Button';
 import { ValuesBackground } from './ValuesBackground';
@@ -12,115 +13,117 @@ type Plan = {
     badge?: string;
 };
 
-const plansData: Record<'sinPermanencia' | 'indefinida', Plan[]> = {
-    sinPermanencia: [
-        {
-            name: 'Básica',
-            price: '39,99',
-            features: [
-                '1 Panel central',
-                '1 Detector de movimiento',
-                '1 Detector de apertura',
-                '1 Mando a distancia',
-                'Carteles disuasorios',
-                'App móvil ilimitada',
-                'Conexión 24h a CRA',
-                'Aviso a Policía'
-            ],
-            highlight: false
-        },
-        {
-            name: 'Estándar y 1 cámara',
-            price: '44,99',
-            features: [
-                '1 Panel central',
-                '1 Cámara Wifi con streaming',
-                '1 Detector de movimiento',
-                '1 Detector de apertura',
-                '1 Mando a distancia',
-                'Carteles disuasorios',
-                'App móvil ilimitada',
-                'Conexión 24h a CRA',
-                'Aviso a Policía'
-            ],
-            highlight: true
-        },
-        {
-            name: 'Estándar y dos cámaras',
-            price: '54,99',
-            features: [
-                '1 Panel central',
-                '2 Cámaras Wifi con streaming',
-                '2 Detectores de movimiento',
-                '1 Detector de apertura',
-                '1 Mando a distancia',
-                'Carteles disuasorios',
-                'App móvil ilimitada',
-                'Conexión 24h a CRA',
-                'Aviso a Policía'
-            ],
-            highlight: false
-        }
-    ],
-    indefinida: [
-        {
-            name: 'Básica',
-            price: '19,99',
-            features: [
-                '1 Panel central',
-                '1 Detector de movimiento',
-                '1 Detector de apertura',
-                '1 Mando a distancia',
-                'Carteles disuasorios',
-                'App móvil ilimitada',
-                'Conexión 24h a CRA',
-                'Aviso a Policía',
-                'Periodo mínimo 9 meses'
-            ],
-            highlight: false,
-            badge: '¡Ahórrate 20€ al mes!'
-        },
-        {
-            name: 'Estándar y 1 cámara',
-            price: '24,99',
-            features: [
-                '1 Panel central',
-                '1 Cámara Wifi con streaming',
-                '1 Detector de movimiento',
-                '1 Detector de apertura',
-                '1 Mando a distancia',
-                'Carteles disuasorios',
-                'App móvil ilimitada',
-                'Conexión 24h a CRA',
-                'Aviso a Policía',
-                'Periodo mínimo 9 meses'
-            ],
-            highlight: true,
-            badge: '¡Ahórrate 20€ al mes!'
-        },
-        {
-            name: 'Estándar y dos cámaras',
-            price: '34,99',
-            features: [
-                '1 Panel central',
-                '2 Cámaras Wifi con streaming',
-                '2 Detectores de movimiento',
-                '1 Detector de apertura',
-                '1 Mando a distancia',
-                'Carteles disuasorios',
-                'App móvil ilimitada',
-                'Conexión 24h a CRA',
-                'Aviso a Policía',
-                'Periodo mínimo 9 meses'
-            ],
-            highlight: false,
-            badge: '¡Ahórrate 20€ al mes!'
-        }
-    ]
-};
-
 export const Prices: React.FC = () => {
+    const { t } = useTranslation();
     const [selectedPlan, setSelectedPlan] = useState<'sinPermanencia' | 'indefinida'>('sinPermanencia');
+
+    const plansData: Record<'sinPermanencia' | 'indefinida', Plan[]> = {
+        sinPermanencia: [
+            {
+                name: t('prices_page.plans.basic_name'),
+                price: '39,99',
+                features: [
+                    t('prices_page.plans.features.panel'),
+                    t('prices_page.plans.features.motion_1'),
+                    t('prices_page.plans.features.opening_1'),
+                    t('prices_page.plans.features.remote'),
+                    t('prices_page.plans.features.stickers'),
+                    t('prices_page.plans.features.app'),
+                    t('prices_page.plans.features.cra'),
+                    t('prices_page.plans.features.police')
+                ],
+                highlight: false
+            },
+            {
+                name: t('prices_page.plans.standard_1_name'),
+                price: '44,99',
+                features: [
+                    t('prices_page.plans.features.panel'),
+                    t('prices_page.plans.features.camera_1'),
+                    t('prices_page.plans.features.motion_1'),
+                    t('prices_page.plans.features.opening_1'),
+                    t('prices_page.plans.features.remote'),
+                    t('prices_page.plans.features.stickers'),
+                    t('prices_page.plans.features.app'),
+                    t('prices_page.plans.features.cra'),
+                    t('prices_page.plans.features.police')
+                ],
+                highlight: true
+            },
+            {
+                name: t('prices_page.plans.standard_2_name'),
+                price: '54,99',
+                features: [
+                    t('prices_page.plans.features.panel'),
+                    t('prices_page.plans.features.camera_2'),
+                    t('prices_page.plans.features.motion_2'),
+                    t('prices_page.plans.features.opening_1'),
+                    t('prices_page.plans.features.remote'),
+                    t('prices_page.plans.features.stickers'),
+                    t('prices_page.plans.features.app'),
+                    t('prices_page.plans.features.cra'),
+                    t('prices_page.plans.features.police')
+                ],
+                highlight: false
+            }
+        ],
+        indefinida: [
+            {
+                name: t('prices_page.plans.basic_name'),
+                price: '19,99',
+                features: [
+                    t('prices_page.plans.features.panel'),
+                    t('prices_page.plans.features.motion_1'),
+                    t('prices_page.plans.features.opening_1'),
+                    t('prices_page.plans.features.remote'),
+                    t('prices_page.plans.features.stickers'),
+                    t('prices_page.plans.features.app'),
+                    t('prices_page.plans.features.cra'),
+                    t('prices_page.plans.features.police'),
+                    t('prices_page.plans.features.min_period')
+                ],
+                highlight: false,
+                badge: t('prices_page.plans.badge_save')
+            },
+            {
+                name: t('prices_page.plans.standard_1_name'),
+                price: '24,99',
+                features: [
+                    t('prices_page.plans.features.panel'),
+                    t('prices_page.plans.features.camera_1'),
+                    t('prices_page.plans.features.motion_1'),
+                    t('prices_page.plans.features.opening_1'),
+                    t('prices_page.plans.features.remote'),
+                    t('prices_page.plans.features.stickers'),
+                    t('prices_page.plans.features.app'),
+                    t('prices_page.plans.features.cra'),
+                    t('prices_page.plans.features.police'),
+                    t('prices_page.plans.features.min_period')
+                ],
+                highlight: true,
+                badge: t('prices_page.plans.badge_save')
+            },
+            {
+                name: t('prices_page.plans.standard_2_name'),
+                price: '34,99',
+                features: [
+                    t('prices_page.plans.features.panel'),
+                    t('prices_page.plans.features.camera_2'),
+                    t('prices_page.plans.features.motion_2'),
+                    t('prices_page.plans.features.opening_1'),
+                    t('prices_page.plans.features.remote'),
+                    t('prices_page.plans.features.stickers'),
+                    t('prices_page.plans.features.app'),
+                    t('prices_page.plans.features.cra'),
+                    t('prices_page.plans.features.police'),
+                    t('prices_page.plans.features.min_period')
+                ],
+                highlight: false,
+                badge: t('prices_page.plans.badge_save')
+            }
+        ]
+    };
+
     const plans = plansData[selectedPlan];
 
     return (
@@ -129,10 +132,10 @@ export const Prices: React.FC = () => {
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        Precios justos
+                        {t('prices_page.title')}
                     </h1>
                     <p className="text-xl text-blue-100 mb-8">
-                        Elige el plan que mejor se adapte a ti. Sin permanencia, sin letra pequeña.
+                        {t('prices_page.subtitle')}
                     </p>
 
                     {/* Toggle */}
@@ -144,7 +147,7 @@ export const Prices: React.FC = () => {
                                 : 'text-blue-200 hover:bg-white/5 hover:text-white'
                                 }`}
                         >
-                            Alarma Sin Permanencia
+                            {t('prices_page.toggle_no_permanence')}
                         </button>
                         <button
                             onClick={() => setSelectedPlan('indefinida')}
@@ -153,7 +156,7 @@ export const Prices: React.FC = () => {
                                 : 'text-blue-200 hover:bg-white/5 hover:text-white'
                                 }`}
                         >
-                            Alarma Indefinida
+                            {t('prices_page.toggle_indefinite')}
                         </button>
                     </div>
                 </div>
@@ -168,7 +171,7 @@ export const Prices: React.FC = () => {
                             {plan.highlight && (
                                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                     <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg shadow-primary/40">
-                                        Más popular
+                                        {t('prices_page.popular_badge')}
                                     </span>
                                 </div>
                             )}
@@ -203,11 +206,11 @@ export const Prices: React.FC = () => {
                                     className="w-full justify-center border-white/20 text-white hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
                                     size="lg"
                                 >
-                                    Contratar ahora
+                                    {t('prices_page.cta_contract')}
                                 </Button>
                                 <p className="text-center text-xs text-blue-300/60 mt-4 flex items-center justify-center">
                                     <Info className="w-3 h-3 mr-1" />
-                                    IVA incluido
+                                    {t('prices_page.vat_included')}
                                 </p>
                             </div>
                         </div>
@@ -216,9 +219,9 @@ export const Prices: React.FC = () => {
 
                 <div className="mt-16 text-center">
                     <p className="text-blue-200">
-                        ¿Necesitas una configuración personalizada?
+                        {t('prices_page.custom_config')}
                         <a href="tel:937379317" className="text-white font-bold ml-2 hover:text-primary-300 transition-colors">
-                            Llámanos al 937 379 317
+                            {t('prices_page.call_us')}
                         </a>
                     </p>
                 </div>

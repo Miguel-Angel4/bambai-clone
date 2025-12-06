@@ -1,14 +1,17 @@
 import React from 'react';
 import { Heart, Shield, Users, Lightbulb, Smile } from 'lucide-react';
 import { ValuesBackground } from './ValuesBackground';
+import { useTranslation } from 'react-i18next';
 
 export const Values: React.FC = () => {
+    const { t } = useTranslation();
+
     const valuesList = [
-        { icon: Lightbulb, title: 'Sencillez', description: 'Sin complicaciones innecesarias.' },
-        { icon: Shield, title: 'Transparencia', description: 'Hablamos claro y directo.' },
-        { icon: Users, title: 'Cercanía', description: 'Siempre accesibles para ti.' },
-        { icon: Heart, title: 'Calidad humana', description: 'Cuidamos de ti y de los tuyos.' },
-        { icon: Smile, title: 'Adaptabilidad', description: 'Nos ajustamos a tus necesidades.' },
+        { icon: Lightbulb, title: t('values_page.values.simplicity_title'), description: t('values_page.values.simplicity_desc') },
+        { icon: Shield, title: t('values_page.values.transparency_title'), description: t('values_page.values.transparency_desc') },
+        { icon: Users, title: t('values_page.values.closeness_title'), description: t('values_page.values.closeness_desc') },
+        { icon: Heart, title: t('values_page.values.quality_title'), description: t('values_page.values.quality_desc') },
+        { icon: Smile, title: t('values_page.values.adaptability_title'), description: t('values_page.values.adaptability_desc') },
     ];
 
     return (
@@ -19,10 +22,10 @@ export const Values: React.FC = () => {
             <section className="relative z-10 bg-transparent py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                        Valores Bambai
+                        {t('values_page.hero_title')}
                     </h1>
                     <p className="text-xl text-white/90 max-w-3xl mx-auto">
-                        Una forma diferente de entender la seguridad
+                        {t('values_page.hero_subtitle')}
                     </p>
                 </div>
             </section>
@@ -32,32 +35,23 @@ export const Values: React.FC = () => {
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="prose prose-lg mx-auto text-white leading-relaxed">
                         <p className="mb-8 text-xl font-medium text-white">
-                            Nos gustaría empezar agradeciendo tu interés en nosotr@s.
+                            {t('values_page.intro')}
                         </p>
 
                         <p className="mb-6 text-white/90">
-                            Somos Bambai, una empresa joven y diferente que nace en el 2020 con el objetivo claro de
-                            reinterpretar el servicio de alarmas y sistemas de seguridad. Nacemos para hablar claro,
-                            directo, transparente, y siempre estar accesibles para nuestros clientes.
+                            {t('values_page.p1')}
                         </p>
 
                         <p className="mb-6 text-white/90">
-                            Nuestro servicio es diferente, ofrecemos una suscripción sin permanencia. Queremos que sigas
-                            siendo cliente por la calidad de nuestro servicio y de nuestro equipo humano y no porque tienes
-                            un contrato firmado. Confiamos en ti, y trabajaremos para que confíes en nosotros.
+                            {t('values_page.p2')}
                         </p>
 
                         <p className="mb-6 text-white/90">
-                            Mucho hablan las empresas tradicionales sobre las maravillas de su tecnología. La nuestra es
-                            justo lo indispensable. No tiene más colores, ni más funciones, ni más luces de las necesarias.
-                            Hace su trabajo y lo hace muy bien. Nos permite ofrecerte un servicio de calidad y cuidar de ti
-                            y de los tuyos con precisión.
+                            {t('values_page.p3')}
                         </p>
 
                         <p className="mb-12 text-white/90">
-                            Nuestros valores nos rigen: sencillez, adaptabilidad, cercanía, transparencia, calidad humana.
-                            Son miles quienes nos conocen a lo largo y ancho del país, y pueden dar fe de ello. Si aún no
-                            nos conoces date la oportunidad, que si algo no te encaja siempre tendrás libertad en tus decisiones.
+                            {t('values_page.p4')}
                         </p>
 
                         {/* Values Grid */}
@@ -77,14 +71,12 @@ export const Values: React.FC = () => {
                         </div>
 
                         <p className="mb-8 text-white/90">
-                            No somos gigantes, para nosotros cada cliente es imprescindible. Nos esforzamos en darte el
-                            mejor servicio y estar accesibles para ti ante cualquier duda. Y si en algún momento cometemos
-                            un error, lo resolveremos con toda la profesionalidad que tu esperas de nosotros.
+                            {t('values_page.p5')}
                         </p>
 
                         <div className="mt-12 border-t border-white/20 pt-8">
-                            <p className="font-bold text-white text-lg">John Correa</p>
-                            <p className="text-white/80">CEO y co-fundador de Bambai.</p>
+                            <p className="font-bold text-white text-lg">{t('values_page.ceo_name')}</p>
+                            <p className="text-white/80">{t('values_page.ceo_title')}</p>
                         </div>
                     </div>
                 </div>

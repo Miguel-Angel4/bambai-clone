@@ -1,110 +1,113 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Check, Camera, Shield, Home, Building2, Warehouse, Caravan, MapPin, PawPrint, Lightbulb } from 'lucide-react';
 import { Button } from './Button';
 import { ValuesBackground } from './ValuesBackground';
 
 export const MotionSensors: React.FC = () => {
+    const { t } = useTranslation();
+    
     const housingTypes = [
         {
             icon: Home,
-            title: 'En pisos o apartamentos',
-            description: 'En los pisos, donde los espacios suelen ser más reducidos, bastan unos pocos sensores de movimiento bien colocados en pasillos, entradas y zonas de paso. Los detectores de movimiento por infrarrojos (PIR) son los más habituales y funcionan genial en interiores. Detectan los cambios de temperatura corporal y son discretos, eficaces y fáciles de instalar.'
+            title: t('motion_sensors.housing_types.1_title'),
+            description: t('motion_sensors.housing_types.1_desc')
         },
         {
             icon: Building2,
-            title: 'En casas con jardín o varias plantas',
-            description: 'En viviendas más grandes, lo ideal es combinar varios tipos de detectores de movimiento. Los de exterior, resistentes a la lluvia y al polvo, son perfectos para vigilar accesos, terrazas y zonas traseras. Dentro de casa, los detectores duales (que combinan infrarrojos y microondas) cubren varias plantas y reducen las falsas alarmas.'
+            title: t('motion_sensors.housing_types.2_title'),
+            description: t('motion_sensors.housing_types.2_desc')
         },
         {
             icon: Warehouse,
-            title: 'En locales, oficinas o almacenes',
-            description: 'Estos espacios suelen ser más amplios y menos transitados, por lo que conviene usar detectores de movimiento de microondas. Suelen tener más alcance y una sensibilidad más alta. Si los combinas con cámaras, podrás verificar cualquier alerta en tiempo real sin moverte del sitio.'
+            title: t('motion_sensors.housing_types.3_title'),
+            description: t('motion_sensors.housing_types.3_desc')
         },
         {
             icon: Caravan,
-            title: 'En caravanas o segundas residencias',
-            description: 'Si solo necesitas proteger un espacio durante un tiempo limitado, los sensores de movimiento inalámbricos son la mejor opción. Se instalan en minutos, no requieren obra ni instalación profesional y puedes darte de baja cuando quieras si eliges una alarma sin permanencia como la nuestra.'
+            title: t('motion_sensors.housing_types.4_title'),
+            description: t('motion_sensors.housing_types.4_desc')
         }
     ];
 
     const placementTips = [
-        'Zonas de paso: pasillos, entradas o escaleras son puntos clave. Colocar ahí los sensores de movimiento garantiza que se detecte cualquier desplazamiento.',
-        'Altura adecuada: lo ideal es instalarlos entre 2 y 2,5 metros del suelo, orientados hacia la zona que quieres cubrir.',
-        'Evita el calor directo: radiadores, chimeneas o luz solar intensa pueden alterar la detección.',
-        'Puertas y ventanas: combina los detectores de movimiento con sensores de apertura para reforzar los puntos de entrada.',
-        'Exterior protegido: si los instalas fuera, busca zonas cubiertas o bajo aleros para protegerlos de la lluvia y el sol.'
+        t('motion_sensors.placement_tips.1'),
+        t('motion_sensors.placement_tips.2'),
+        t('motion_sensors.placement_tips.3'),
+        t('motion_sensors.placement_tips.4'),
+        t('motion_sensors.placement_tips.5')
     ];
 
     const cameraAdvantages = [
         {
-            title: 'Confirmación visual inmediata',
-            description: 'Los detectores de movimiento tradicionales avisan cuando algo se mueve, pero no te muestran qué ha pasado. Con los sensores de movimiento con cámara puedes verlo en tiempo real desde tu móvil y decidir si se trata de una alarma real o de un movimiento inocente.'
+            title: t('motion_sensors.advantages_list.1_title'),
+            description: t('motion_sensors.advantages_list.1_desc')
         },
         {
-            title: 'Menos falsas alarmas',
-            description: 'La verificación visual permite evitar sustos innecesarios. Si tienes mascotas o hay corrientes de aire que podrían activar un detector, la cámara te ayuda a comprobarlo al instante.'
+            title: t('motion_sensors.advantages_list.2_title'),
+            description: t('motion_sensors.advantages_list.2_desc')
         },
         {
-            title: 'Control total desde tu móvil',
-            description: 'A través de la app de Bambai, puedes acceder a las imágenes en directo o revisar los clips grabados cada vez que se activa un sensor. Estés donde estés, sabrás qué ocurre en casa.'
+            title: t('motion_sensors.advantages_list.3_title'),
+            description: t('motion_sensors.advantages_list.3_desc')
         },
         {
-            title: 'Pruebas en caso de intrusión',
-            description: 'Si alguien intenta entrar, las cámaras registran la secuencia del suceso. De esta forma tendrás pruebas visuales que pueden serte útiles si necesitas justificar el incidente.'
+            title: t('motion_sensors.advantages_list.4_title'),
+            description: t('motion_sensors.advantages_list.4_desc')
         },
         {
-            title: 'Integración con todo el sistema',
-            description: 'En Bambai, los sensores de movimiento con cámara se comunican con el resto de dispositivos: detectores de movimiento, sensores de apertura y el panel central. Todo el sistema trabaja coordinado.'
+            title: t('motion_sensors.advantages_list.5_title'),
+            description: t('motion_sensors.advantages_list.5_desc')
         },
         {
-            title: 'Perfectos para casas con mascotas o segundas residencias',
-            description: 'Si tienes animales, sabrás de inmediato si ha sido tu perro quien ha pasado frente al sensor o si realmente hay algo más. También son una gran opción para segundas viviendas o locales que no visitas a diario.'
+            title: t('motion_sensors.advantages_list.6_title'),
+            description: t('motion_sensors.advantages_list.6_desc')
         }
     ];
 
     const systemFeatures = [
         {
-            title: 'Instalación sin obras',
-            description: 'Todo se monta en minutos y sin herramientas.'
+            title: t('motion_sensors.different_list.1_title'),
+            description: t('motion_sensors.different_list.1_desc')
         },
         {
-            title: 'Aviso a la policía asistido',
-            description: 'Si ocurre algo, te ayudamos a contactar con la comisaría más cercana.'
+            title: t('motion_sensors.different_list.2_title'),
+            description: t('motion_sensors.different_list.2_desc')
         },
         {
-            title: 'Soporte real 24/7',
-            description: 'Nuestro equipo está disponible siempre, sin bots ni esperas eternas.'
+            title: t('motion_sensors.different_list.3_title'),
+            description: t('motion_sensors.different_list.3_desc')
         },
         {
-            title: 'Sin compra obligatoria',
-            description: 'No tienes que pagar por la alarma, la usas mientras la necesites.'
+            title: t('motion_sensors.different_list.4_title'),
+            description: t('motion_sensors.different_list.4_desc')
         },
         {
-            title: 'Flexibilidad total',
-            description: 'Puedes cambiar de plan o darte de baja cuando quieras.'
+            title: t('motion_sensors.different_list.5_title'),
+            description: t('motion_sensors.different_list.5_desc')
         }
     ];
 
     const selectionTips = [
         {
             icon: Lightbulb,
-            title: 'Piensa en tus rutinas',
-            description: 'Si pasas muchas horas fuera, prioriza detectores con notificación inmediata a la app para reaccionar rápido.'
+            title: t('motion_sensors.selection_tips.1_title'),
+            description: t('motion_sensors.selection_tips.1_desc')
         },
         {
             icon: Lightbulb,
-            title: 'Valora el entorno',
-            description: 'En estancias con mucha luz o variaciones de temperatura, los detectores de microondas funcionan mejor.'
+            title: t('motion_sensors.selection_tips.2_title'),
+            description: t('motion_sensors.selection_tips.2_desc')
         },
         {
             icon: Lightbulb,
-            title: 'Combina tecnologías',
-            description: 'Un sistema que mezcle sensores PIR con cámaras te dará una protección más completa.'
+            title: t('motion_sensors.selection_tips.3_title'),
+            description: t('motion_sensors.selection_tips.3_desc')
         },
         {
             icon: Lightbulb,
-            title: 'Busca flexibilidad',
-            description: 'Si vives de alquiler o planeas mudarte, elige detectores de movimiento que puedas mover o ampliar sin depender de técnicos.'
+            title: t('motion_sensors.selection_tips.4_title'),
+            description: t('motion_sensors.selection_tips.4_desc')
         }
     ];
 
@@ -117,19 +120,14 @@ export const MotionSensors: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-4xl mx-auto">
                         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                            Sensores y detectores de movimiento
+                            {t('motion_sensors.hero_title')}
                         </h1>
                         <p className="text-xl md:text-2xl text-blue-100 mb-8">
-                            Protección eficaz, fácil de instalar y con aviso inmediato al móvil
+                            {t('motion_sensors.hero_subtitle')}
                         </p>
                         <p className="text-lg text-blue-100 mb-10">
-                            Las alarmas con detectores de movimiento son el corazón de cualquier sistema de seguridad moderno.
-                            En Bambai nuestros detectores están pensados para reaccionar en segundos y avisarte al instante,
-                            sin esperas, sin complicaciones y, por supuesto, sin permanencias.
+                            {t('motion_sensors.hero_desc')}
                         </p>
-                        <Button variant="primary" size="lg" className="shadow-lg shadow-primary/30">
-                            Ver precios
-                        </Button>
                     </div>
                 </div>
             </section>
@@ -139,12 +137,10 @@ export const MotionSensors: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                            Detectores de movimiento según el tipo de vivienda
+                            {t('motion_sensors.housing_title')}
                         </h2>
                         <p className="text-lg text-blue-100 max-w-3xl mx-auto">
-                            Cada tipo de vivienda necesita una distribución y una tecnología diferente.
-                            No se trata de llenar la casa de sensores, sino de colocarlos donde de verdad sirven
-                            y aprovechar al máximo su alcance.
+                            {t('motion_sensors.housing_desc')}
                         </p>
                     </div>
 
@@ -174,11 +170,10 @@ export const MotionSensors: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                            Dónde colocar los sensores de movimiento para proteger de verdad
+                            {t('motion_sensors.placement_title')}
                         </h2>
                         <p className="text-lg text-blue-100 max-w-3xl mx-auto">
-                            La ubicación de los detectores de movimiento es tan importante como su calidad.
-                            Un sensor bien colocado puede cubrir una habitación entera; uno mal situado puede dejar zonas sin vigilancia.
+                            {t('motion_sensors.placement_desc')}
                         </p>
                     </div>
 
@@ -202,28 +197,20 @@ export const MotionSensors: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row items-center gap-12">
                         <div className="flex-1">
-                            <div className="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
-                                <PawPrint className="w-10 h-10 text-primary-300" />
-                            </div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                                Si tienes mascotas, esto te interesa
-                            </h2>
-                            <p className="text-lg text-blue-100 mb-6 leading-relaxed">
-                                Las mascotas y los sensores de movimiento siempre han tenido una relación complicada,
-                                pero eso es cosa del pasado. Los detectores de movimiento actuales son capaces de
-                                diferenciar entre una persona y un animal pequeño (hasta unos 20 kilos).
-                                Si tu perro o tu gato se mueve por casa, el sistema lo ignora.
-                            </p>
-                            <p className="text-lg text-blue-100 leading-relaxed">
-                                En Bambai, además, contamos con packs especiales para hogares con mascotas.
-                                Combinamos detectores de apertura en puertas y ventanas con cámaras interiores,
-                                para que, si salta una alerta, puedas comprobar en segundos si ha sido tu mascota o algo más serio.
-                            </p>
-                        </div>
-                        <div className="flex-1">
                             <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-12 text-center">
                                 <PawPrint className="w-32 h-32 text-primary-300/50 mx-auto" />
                             </div>
+                        </div>
+                        <div className="flex-1">
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                                {t('motion_sensors.pets_title')}
+                            </h2>
+                            <p className="text-lg text-blue-100 mb-6 leading-relaxed">
+                                {t('motion_sensors.pets_desc_1')}
+                            </p>
+                            <p className="text-lg text-blue-100 leading-relaxed">
+                                {t('motion_sensors.pets_desc_2')}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -234,14 +221,14 @@ export const MotionSensors: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                            Consejos para acertar al elegir tus detectores de movimiento
+                            {t('motion_sensors.selection_title')}
                         </h2>
                         <p className="text-lg text-blue-100 max-w-3xl mx-auto">
-                            Antes de decidirte, hay algunos detalles que merece la pena tener en cuenta
+                            {t('motion_sensors.selection_desc')}
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {selectionTips.map((tip, index) => {
                             const Icon = tip.icon;
                             return (
@@ -260,34 +247,51 @@ export const MotionSensors: React.FC = () => {
                 </div>
             </section>
 
-            {/* Camera Sensors Section */}
+            {/* Camera Section */}
             <section className="relative z-10 py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                            Sensores de movimiento con cámara
+                            {t('motion_sensors.camera_title')}
                         </h2>
-                        <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8">
-                            Los sensores de movimiento con cámara son la evolución natural de los sistemas de seguridad domésticos.
-                            No solo detectan lo que pasa, sino que también te lo muestran al instante.
+                        <p className="text-lg text-blue-100 max-w-3xl mx-auto">
+                            {t('motion_sensors.camera_desc')}
                         </p>
-                        <div className="bg-primary/20 backdrop-blur-md border border-primary/30 rounded-2xl p-8 max-w-4xl mx-auto">
-                            <h3 className="text-xl font-bold text-white mb-4">
-                                Cómo funcionan los sensores de movimiento con cámara
-                            </h3>
-                            <p className="text-blue-100 leading-relaxed">
-                                Un sensor de movimiento con cámara detecta cualquier cambio en el espacio que vigila y,
-                                en cuanto lo percibe, activa la cámara y te envía una notificación al móvil.
-                                En ese momento puedes ver en directo qué ha ocurrido y decidir cómo actuar.
-                                El sistema es tan rápido que apenas pasan unos segundos desde que se detecta el movimiento
-                                hasta que recibes el aviso.
-                            </p>
+                    </div>
+
+                    <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-12 mb-16">
+                        <div className="flex flex-col md:flex-row gap-12 items-center">
+                            <div className="flex-1">
+                                <h3 className="text-2xl font-bold text-white mb-6">
+                                    {t('motion_sensors.camera_box_title')}
+                                </h3>
+                                <p className="text-blue-100 leading-relaxed">
+                                    {t('motion_sensors.camera_box_desc')}
+                                </p>
+                            </div>
+                            <div className="flex-1 w-full">
+                                <div className="bg-black/30 rounded-xl p-6 border border-white/10">
+                                    <div className="aspect-video bg-gray-800 rounded-lg flex items-center justify-center relative overflow-hidden group">
+                                        <Camera className="w-16 h-16 text-white/20 group-hover:text-white/40 transition-colors" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                        <div className="absolute bottom-4 left-4 right-4">
+                                            <div className="flex items-center gap-2 text-red-500 mb-1">
+                                                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                                                <span className="text-xs font-bold uppercase tracking-wider">REC</span>
+                                            </div>
+                                            <div className="h-1 bg-white/20 rounded-full overflow-hidden">
+                                                <div className="h-full w-2/3 bg-red-500"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div className="mb-16">
                         <h3 className="text-2xl font-bold text-white mb-8 text-center">
-                            Ventajas de los detectores de movimiento con cámara
+                            {t('motion_sensors.advantages_title')}
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {cameraAdvantages.map((advantage, index) => (
@@ -304,100 +308,97 @@ export const MotionSensors: React.FC = () => {
 
                     <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-12">
                         <h3 className="text-2xl font-bold text-white mb-6">
-                            Cuándo conviene instalar sensores de movimiento con cámara
+                            {t('motion_sensors.when_title')}
                         </h3>
                         <p className="text-blue-100 mb-6 leading-relaxed">
-                            Los sensores de movimiento con cámara no son imprescindibles para todos los hogares,
-                            pero sí muy recomendables en muchos casos. Te convienen especialmente si:
+                            {t('motion_sensors.when_desc')}
                         </p>
                         <ul className="space-y-3">
                             <li className="flex items-start gap-3">
                                 <Check className="w-5 h-5 text-primary-400 flex-shrink-0 mt-1" />
-                                <span className="text-blue-100">Pasas gran parte del día fuera y quieres comprobar visualmente que todo está bien.</span>
+                                <span className="text-blue-100">{t('motion_sensors.when_list.1')}</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <Check className="w-5 h-5 text-primary-400 flex-shrink-0 mt-1" />
-                                <span className="text-blue-100">Tienes una casa amplia, con varias plantas o entradas.</span>
+                                <span className="text-blue-100">{t('motion_sensors.when_list.2')}</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <Check className="w-5 h-5 text-primary-400 flex-shrink-0 mt-1" />
-                                <span className="text-blue-100">Quieres reducir al mínimo las falsas alarmas por mascotas o movimientos ambientales.</span>
+                                <span className="text-blue-100">{t('motion_sensors.when_list.3')}</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <Check className="w-5 h-5 text-primary-400 flex-shrink-0 mt-1" />
-                                <span className="text-blue-100">Buscas una solución flexible y moderna, sin depender de contratos largos ni instalaciones complicadas.</span>
+                                <span className="text-blue-100">{t('motion_sensors.when_list.4')}</span>
                             </li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            {/* How Bambai System Works */}
+            {/* How it works Section */}
             <section className="relative z-10 py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                            Cómo funciona el sistema de Bambai
+                            {t('motion_sensors.how_title')}
                         </h2>
                         <p className="text-lg text-blue-100 max-w-3xl mx-auto">
-                            El sistema se basa en una idea muy sencilla: un panel central conectado con distintos
-                            sensores y detectores de movimiento colocados en puntos estratégicos de la vivienda.
+                            {t('motion_sensors.how_desc')}
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-8 shadow-md">
                             <h3 className="text-xl font-bold text-white mb-4">
-                                Cuando se detecta un movimiento
+                                {t('motion_sensors.how_steps.title')}
                             </h3>
                             <ol className="space-y-3">
                                 <li className="flex items-start gap-3">
                                     <span className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg shadow-primary/30">1</span>
-                                    <span className="text-blue-100">El panel comprueba si la alarma está activada.</span>
+                                    <span className="text-blue-100">{t('motion_sensors.how_steps.1')}</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <span className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg shadow-primary/30">2</span>
-                                    <span className="text-blue-100">Si lo está, te envía una notificación inmediata a la app.</span>
+                                    <span className="text-blue-100">{t('motion_sensors.how_steps.2')}</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <span className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg shadow-primary/30">3</span>
-                                    <span className="text-blue-100">Si hay cámaras instaladas, puedes ver en directo lo que está pasando.</span>
+                                    <span className="text-blue-100">{t('motion_sensors.how_steps.3')}</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <span className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg shadow-primary/30">4</span>
-                                    <span className="text-blue-100">Si confirmas que no eres tú, el sistema te guía para contactar con la policía.</span>
+                                    <span className="text-blue-100">{t('motion_sensors.how_steps.4')}</span>
                                 </li>
                             </ol>
                         </div>
 
                         <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-8 shadow-md">
                             <h3 className="text-xl font-bold text-white mb-4">
-                                Instalación sencilla
+                                {t('motion_sensors.install_title')}
                             </h3>
                             <p className="text-blue-100 mb-4">
-                                Una de las ventajas de Bambai es que todo se instala en casa sin complicaciones.
-                                No necesitas técnicos ni herramientas.
+                                {t('motion_sensors.install_desc')}
                             </p>
                             <ul className="space-y-3">
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-primary-400 flex-shrink-0 mt-0.5" />
-                                    <span className="text-blue-100">Coloca el panel central en una zona con buena cobertura móvil.</span>
+                                    <span className="text-blue-100">{t('motion_sensors.install_steps.1')}</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-primary-400 flex-shrink-0 mt-0.5" />
-                                    <span className="text-blue-100">Sitúa los sensores y detectores de movimiento en entradas, pasillos o zonas comunes.</span>
+                                    <span className="text-blue-100">{t('motion_sensors.install_steps.2')}</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Check className="w-5 h-5 text-primary-400 flex-shrink-0 mt-0.5" />
-                                    <span className="text-blue-100">Conéctalo a la app y comprueba que todo funciona correctamente.</span>
+                                    <span className="text-blue-100">{t('motion_sensors.install_steps.3')}</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-12 shadow-lg">
+                    <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-12 shadow-lg mt-12">
                         <h3 className="text-2xl font-bold text-white mb-8 text-center">
-                            Qué hace diferente a Bambai
+                            {t('motion_sensors.different_title')}
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {systemFeatures.map((feature, index) => (
@@ -418,18 +419,18 @@ export const MotionSensors: React.FC = () => {
             <section className="relative z-10 py-20">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-primary/20 backdrop-blur-md border border-primary/30 rounded-3xl p-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                        Tu alarma para casa como siempre la has querido
+                        {t('motion_sensors.cta_title')}
                     </h2>
                     <p className="text-xl text-white/90 mb-8">
-                        Sencilla, económica y sin permanencia
+                        {t('motion_sensors.cta_desc')}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button variant="primary" size="lg" className="shadow-lg shadow-primary/40">
-                            Ver todos los planes
+                            {t('home_alarms.cta_button')}
                         </Button>
                         <a href="tel:937379317">
                             <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
-                                Llamar al 937 379 317
+                                {t('home_alarms.cta_call')}
                             </Button>
                         </a>
                     </div>

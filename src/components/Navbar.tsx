@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Menu, X, ChevronDown, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -50,7 +50,7 @@ export const Navbar = () => {
                 <div className="flex justify-between h-16">
                     <div className="flex items-center">
                         <Link to="/" className="flex-shrink-0 flex items-center">
-                            <span className="text-2xl font-bold text-primary">Bambai</span>
+                            <img src="/img/Logo.png" alt="Bambai" className="h-10" />
                         </Link>
                     </div>
 
@@ -136,7 +136,7 @@ export const Navbar = () => {
                         </div>
 
                         <button className="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary-600 transition-colors font-medium">
-                            Calcula tu cuota
+                            {t('navbar.calculate_quote')}
                         </button>
                     </div>
 
@@ -211,7 +211,7 @@ export const Navbar = () => {
 
                         {/* Mobile Language Selector */}
                         <div className="px-3 py-2 border-t border-gray-100 mt-4">
-                            <div className="text-base font-medium text-gray-700 mb-2">Idioma</div>
+                            <div className="text-base font-medium text-gray-700 mb-2">{t('navbar.language')}</div>
                             <div className="flex gap-4">
                                 {languages.map((lang) => (
                                     <button
@@ -230,7 +230,7 @@ export const Navbar = () => {
 
                         <div className="px-3 py-4">
                             <button className="w-full bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-600 transition-colors font-medium">
-                                Calcula tu cuota
+                                {t('navbar.calculate_quote')}
                             </button>
                         </div>
                     </div>

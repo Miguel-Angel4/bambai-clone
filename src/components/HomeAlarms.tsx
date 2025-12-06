@@ -1,98 +1,100 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Check, Shield, Clock, Smartphone, Wrench } from 'lucide-react';
 import { Button } from './Button';
 import { ValuesBackground } from './ValuesBackground';
 
 export const HomeAlarms: React.FC = () => {
+    const { t } = useTranslation();
     const pricingPlans = [
         {
-            name: 'Plan 1: Básica',
-            subtitle: 'Alarma básica para vivienda segura',
+            name: t('home_alarms.plans.plan_1_name'),
+            subtitle: t('home_alarms.plan_1_subtitle'),
             price: '19,99',
-            period: 'Periodo mínimo 9 meses',
+            period: t('prices_page.plans.features.min_period'),
             features: [
-                '1 Panel central',
-                '1 Detector de movimiento',
-                '1 Detector de apertura',
-                '1 Llave inteligente',
-                '3 Pegatinas disuasorias'
+                t('home_alarms.plans.features.panel'),
+                t('home_alarms.plans.features.motion_1'),
+                t('home_alarms.plans.features.opening_1'),
+                t('home_alarms.plans.features.key_1'),
+                t('home_alarms.plans.features.stickers')
             ],
             highlight: false,
-            description: 'Ideal para pisos pequeños, segundas residencias o para quienes buscan una alarma para vivienda práctica y económica.'
+            description: t('home_alarms.plan_1_desc')
         },
         {
-            name: 'Plan 2: Estándar',
-            subtitle: 'Alarma con cámara wifi y streaming en directo',
+            name: t('home_alarms.plans.plan_2_name'),
+            subtitle: t('home_alarms.plan_2_subtitle'),
             price: '24,99',
-            period: 'Periodo mínimo 9 meses',
+            period: t('prices_page.plans.features.min_period'),
             features: [
-                '1 Panel central',
-                '1 Cámara wifi con streaming en directo',
-                '1 Detector de movimiento',
-                '1 Detector de apertura',
-                '1 Llave inteligente',
-                '3 Pegatinas disuasorias'
+                t('home_alarms.plans.features.panel'),
+                t('home_alarms.plans.features.camera_1'),
+                t('home_alarms.plans.features.motion_1'),
+                t('home_alarms.plans.features.opening_1'),
+                t('home_alarms.plans.features.key_1'),
+                t('home_alarms.plans.features.stickers')
             ],
             highlight: true,
-            description: 'El plan más elegido por familias que quieren comprobar desde el móvil qué ocurre en casa, incluso cuando están fuera.'
+            description: t('home_alarms.plan_2_desc')
         },
         {
-            name: 'Plan 3: Avanzada',
-            subtitle: 'Alarma avanzada con máxima seguridad',
+            name: t('home_alarms.plans.plan_3_name'),
+            subtitle: t('home_alarms.plan_3_subtitle'),
             price: '34,99',
-            period: 'Periodo mínimo 9 meses',
+            period: t('prices_page.plans.features.min_period'),
             features: [
-                '1 Panel central',
-                '2 Cámaras wifi con streaming',
-                '2 Detectores de movimiento',
-                '2 Detectores de apertura',
-                '2 Llaves inteligentes',
-                '3 Pegatinas disuasorias'
+                t('home_alarms.plans.features.panel'),
+                t('home_alarms.plans.features.camera_2'),
+                t('home_alarms.plans.features.motion_2'),
+                t('home_alarms.plans.features.opening_2'),
+                t('home_alarms.plans.features.key_2'),
+                t('home_alarms.plans.features.stickers')
             ],
             highlight: false,
-            description: 'La mejor elección para casas grandes, chalets o cualquier vivienda que necesite un control más exhaustivo.'
+            description: t('home_alarms.plan_3_desc')
         }
     ];
 
     const features = [
         {
             icon: Shield,
-            title: 'Asistencia 24/7 y aviso inmediato a la policía',
-            description: 'El soporte funciona las 24 horas del día, los 365 días del año. Si se detecta una intrusión, recibes una notificación inmediata en la app y puedes conectar con la comisaría más cercana para que el aviso a la policía sea rápido y directo.'
+            title: t('home_alarms.features_list.1_title'),
+            description: t('home_alarms.features_list.1_desc')
         },
         {
             icon: Clock,
-            title: 'Autoinstalación gratuita y en solo 10 minutos',
-            description: 'En 48 a 72 horas laborables recibes el equipo en tu casa y lo montas tú mismo en apenas 10 minutos. Sin cables, sin obras y sin agujeros en las paredes. Con asistencia remota si lo necesitas. Todo incluido en el precio, sin costes adicionales.'
+            title: t('home_alarms.features_list.2_title'),
+            description: t('home_alarms.features_list.2_desc')
         },
         {
             icon: Wrench,
-            title: 'Equipo completo adaptado a tu vivienda',
-            description: 'Panel central como cerebro del sistema, detectores de movimiento y de apertura para cubrir puertas y ventanas, llaves inteligentes para activar y desactivar la alarma cómodamente, cámaras con streaming en directo incluidas en los planes superiores, y pegatinas disuasorias que añaden un extra de protección.'
+            title: t('home_alarms.features_list.3_title'),
+            description: t('home_alarms.features_list.3_desc')
         },
         {
             icon: Smartphone,
-            title: 'Control total desde la app',
-            description: 'La app de Bambai convierte tu móvil en el mando de tu alarma. Activa o desactiva la alarma en segundos, revisa los movimientos detectados, fotos y vídeos, comparte acceso con otras personas decidiendo qué permisos tiene cada una, y confirma alertas de inmediato avisando a la policía desde la misma app.'
+            title: t('home_alarms.features_list.4_title'),
+            description: t('home_alarms.features_list.4_desc')
         }
     ];
 
     const transparencyPoints = [
         {
-            title: 'Todo incluido en tu alarma para vivienda',
-            description: 'Instalación gratuita, mantenimiento, soporte 24/7 y asistencia inmediata para avisar a la policía en caso de incidencia.'
+            title: t('home_alarms.transparency_points.1_title'),
+            description: t('home_alarms.transparency_points.1_desc')
         },
         {
-            title: 'Ahorro real frente a otras empresas',
-            description: 'Desde 19,99 €/mes tienes cobertura total sin costes de instalación ni equipos adicionales.'
+            title: t('home_alarms.transparency_points.2_title'),
+            description: t('home_alarms.transparency_points.2_desc')
         },
         {
-            title: 'Sin costes ocultos ni letra pequeña',
-            description: 'Lo que ves es lo que pagas. Sin sorpresas, sin cargos extra, sin complicaciones.'
+            title: t('home_alarms.transparency_points.3_title'),
+            description: t('home_alarms.transparency_points.3_desc')
         },
         {
-            title: 'La tranquilidad de pagar lo justo',
-            description: 'Protege tu hogar con precios que cualquiera pueda asumir y con un servicio completo que ya lo incluye todo.'
+            title: t('home_alarms.transparency_points.4_title'),
+            description: t('home_alarms.transparency_points.4_desc')
         }
     ];
 
@@ -105,17 +107,16 @@ export const HomeAlarms: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-4xl mx-auto">
                         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                            Alarmas de seguridad para casa, hogar y vivienda
+                            {t('home_alarms.hero_title')}
                         </h1>
                         <p className="text-xl md:text-2xl text-blue-100 mb-8">
-                            Planes desde <span className="text-primary-300 font-bold">19,99 €/mes</span>
+                            {t('home_alarms.hero_subtitle_prefix')} <span className="text-primary-300 font-bold">19,99 €/mes</span>
                         </p>
                         <p className="text-lg text-blue-100 mb-10">
-                            En Bambai creemos que la seguridad no tiene por qué ser cara ni esconder sorpresas.
-                            Nuestras alarmas para casa están pensadas para ser accesibles, claras y sin letra pequeña.
+                            {t('home_alarms.hero_desc')}
                         </p>
                         <Button variant="primary" size="lg" className="shadow-lg shadow-primary/30">
-                            Ver precios
+                            {t('home_alarms.cta_button')}
                         </Button>
                     </div>
                 </div>
@@ -126,12 +127,10 @@ export const HomeAlarms: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                            Planes de alarmas para casa desde 19,99 €/mes
+                            {t('home_alarms.pricing_title')}
                         </h2>
                         <p className="text-lg text-blue-100 max-w-3xl mx-auto">
-                            En Bambai tenemos claro que la seguridad no debería costar un dineral ni obligarte a firmar
-                            contratos interminables. Eliges el nivel de seguridad que mejor encaje contigo y con tu vivienda,
-                            pagando solo por lo que de verdad necesitas.
+                            {t('home_alarms.pricing_desc')}
                         </p>
                     </div>
 
@@ -140,14 +139,14 @@ export const HomeAlarms: React.FC = () => {
                             <div
                                 key={index}
                                 className={`relative bg-white/5 backdrop-blur-md rounded-2xl p-8 transition-all duration-500 border shadow-xl hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] hover:-translate-y-2 hover:bg-white/10 ${plan.highlight
-                                        ? 'border-primary/50 shadow-primary/20 ring-2 ring-primary/30'
-                                        : 'border-white/10 hover:border-primary/50'
+                                    ? 'border-primary/50 shadow-primary/20 ring-2 ring-primary/30'
+                                    : 'border-white/10 hover:border-primary/50'
                                     }`}
                             >
                                 {plan.highlight && (
                                     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                         <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg shadow-primary/40">
-                                            Más popular
+                                            {t('prices_page.popular_badge')}
                                         </span>
                                     </div>
                                 )}
@@ -177,17 +176,16 @@ export const HomeAlarms: React.FC = () => {
                                     className={`w-full justify-center ${!plan.highlight ? 'border-white/20 text-white hover:bg-primary hover:text-white hover:border-primary' : ''}`}
                                     size="lg"
                                 >
-                                    Contratar ahora
+                                    {t('prices_page.cta_contract')}
                                 </Button>
-                                <p className="text-center text-xs text-blue-300/60 mt-4">IVA incluido</p>
+                                <p className="text-center text-xs text-blue-300/60 mt-4">{t('prices_page.vat_included')}</p>
                             </div>
                         ))}
                     </div>
 
                     <div className="mt-12 text-center">
                         <p className="text-blue-200">
-                            Todos nuestros planes incluyen instalación gratuita, mantenimiento, soporte 24/7
-                            y asistencia inmediata para que puedas avisar a la policía en caso de incidencia.
+                            {t('home_alarms.all_included')}
                         </p>
                     </div>
                 </div>
@@ -198,11 +196,10 @@ export const HomeAlarms: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                            Precios justos y transparentes
+                            {t('home_alarms.transparency_title')}
                         </h2>
                         <p className="text-lg text-blue-100 max-w-3xl mx-auto">
-                            La idea es sencilla: proteger tu hogar con precios que cualquiera pueda asumir
-                            y con un servicio completo que ya lo incluye todo.
+                            {t('home_alarms.transparency_desc')}
                         </p>
                     </div>
 
@@ -222,12 +219,10 @@ export const HomeAlarms: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                            Características de nuestras alarmas de seguridad
+                            {t('home_alarms.features_title')}
                         </h2>
                         <p className="text-lg text-blue-100 max-w-3xl mx-auto">
-                            En Bambai creemos que las alarmas para casa tienen que ser fáciles, claras y accesibles.
-                            El sistema está pensado para que tengas tranquilidad desde el primer minuto,
-                            sin instalaciones invasivas ni complicaciones técnicas.
+                            {t('home_alarms.features_desc')}
                         </p>
                     </div>
 
@@ -256,18 +251,18 @@ export const HomeAlarms: React.FC = () => {
             <section className="relative z-10 py-20">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-primary/20 backdrop-blur-md border border-primary/30 rounded-3xl p-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                        ¿Listo para proteger tu hogar?
+                        {t('home_alarms.cta_title')}
                     </h2>
                     <p className="text-xl text-white/90 mb-8">
-                        Contrata tu alarma hoy y empieza a disfrutar de la tranquilidad que mereces
+                        {t('home_alarms.cta_desc')}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button variant="primary" size="lg" className="shadow-lg shadow-primary/40">
-                            Ver todos los planes
+                            {t('home_alarms.cta_button')}
                         </Button>
                         <a href="tel:937379317">
                             <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
-                                Llamar al 937 379 317
+                                {t('home_alarms.cta_call')}
                             </Button>
                         </a>
                     </div>

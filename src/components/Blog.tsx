@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Calendar, User } from 'lucide-react';
 import { ValuesBackground } from './ValuesBackground';
+import { useTranslation } from 'react-i18next';
 
 interface BlogPost {
     title: string;
@@ -13,85 +14,87 @@ interface BlogPost {
 }
 
 export const Blog: React.FC = () => {
+    const { t } = useTranslation();
+
     const posts: BlogPost[] = [
         {
-            title: "Qué alarma poner en casa",
-            excerpt: "Si quieres saber la respuesta adecuada a qué alarma poner en casa, en Bambai, como empresa experta en este tipo de sistema de seguridad...",
+            title: t('blog_page.posts.1.title'),
+            excerpt: t('blog_page.posts.1.excerpt'),
             date: "20 Nov 2024",
-            author: "Equipo Bambai",
-            category: "Alarma para casa",
+            author: t('blog_page.author'),
+            category: t('blog_page.posts.1.category'),
             imageUrl: "https://images.unsplash.com/photo-1558002038-1091a166111c?auto=format&fit=crop&q=80&w=800",
             href: "https://www.bambai.es/blog/que-alarma-poner-en-casa"
         },
         {
-            title: "Los mejores perros guardianes: descubre la raza ideal para ti",
-            excerpt: "Descubre cuáles son las mejores razas de perros guardianes para proteger tu hogar y a tu familia. Una guía completa para elegir...",
+            title: t('blog_page.posts.2.title'),
+            excerpt: t('blog_page.posts.2.excerpt'),
             date: "18 Nov 2024",
-            author: "Equipo Bambai",
-            category: "Seguridad",
+            author: t('blog_page.author'),
+            category: t('blog_page.posts.2.category'),
             imageUrl: "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&q=80&w=800",
             href: "https://www.bambai.es/blog/perro-guardian"
         },
         {
-            title: "Cómo abrir una puerta con la llave dentro: trucos que funcionan",
-            excerpt: "¿Te has dejado las llaves dentro? No entres en pánico. Te explicamos algunos trucos seguros y efectivos para abrir tu puerta...",
+            title: t('blog_page.posts.3.title'),
+            excerpt: t('blog_page.posts.3.excerpt'),
             date: "15 Nov 2024",
-            author: "Equipo Bambai",
-            category: "Consejos",
+            author: t('blog_page.author'),
+            category: t('blog_page.posts.3.category'),
             imageUrl: "https://images.unsplash.com/photo-1516961642265-531546e84af2?auto=format&fit=crop&q=80&w=800",
             href: "https://www.bambai.es/blog/como-abrir-puerta-llave-dentro"
         },
         {
-            title: "Grados de seguridad: niveles, usos y normativas aplicables",
-            excerpt: "Entiende los diferentes grados de seguridad en alarmas y sistemas de protección. ¿Qué nivel necesita realmente tu vivienda o negocio?",
+            title: t('blog_page.posts.4.title'),
+            excerpt: t('blog_page.posts.4.excerpt'),
             date: "12 Nov 2024",
-            author: "Equipo Bambai",
-            category: "Normativa",
+            author: t('blog_page.author'),
+            category: t('blog_page.posts.4.category'),
             imageUrl: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=800",
             href: "https://www.bambai.es/blog/grados-seguridad"
         },
         {
-            title: "Instalación de CCTV: pasos, consejos y normativa básica",
-            excerpt: "Guía paso a paso para la instalación de un sistema de CCTV. Conoce la normativa vigente y los mejores consejos para una instalación...",
+            title: t('blog_page.posts.5.title'),
+            excerpt: t('blog_page.posts.5.excerpt'),
             date: "10 Nov 2024",
-            author: "Equipo Bambai",
-            category: "Tecnología",
+            author: t('blog_page.author'),
+            category: t('blog_page.posts.5.category'),
             imageUrl: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80&w=800",
             href: "https://www.bambai.es/blog/instalacion-cctv"
         },
         {
-            title: "Alarmas GPRS: todo sobre su funcionamiento y ventajas",
-            excerpt: "Las alarmas GPRS ofrecen una seguridad superior al no depender de la línea telefónica fija. Descubre cómo funcionan y sus ventajas...",
+            title: t('blog_page.posts.6.title'),
+            excerpt: t('blog_page.posts.6.excerpt'),
             date: "08 Nov 2024",
-            author: "Equipo Bambai",
-            category: "Tecnología",
+            author: t('blog_page.author'),
+            category: t('blog_page.posts.6.category'),
             imageUrl: "https://images.unsplash.com/photo-1563770095-39d468f95742?auto=format&fit=crop&q=80&w=800",
             href: "https://www.bambai.es/blog/gprs-alarmas"
         },
         {
-            title: "Instalación de una cámara de vigilancia: guía completa",
-            excerpt: "Aprende a instalar tu propia cámara de vigilancia con esta guía completa. Consejos de ubicación, configuración y mantenimiento...",
+            title: t('blog_page.posts.7.title'),
+            excerpt: t('blog_page.posts.7.excerpt'),
             date: "05 Nov 2024",
-            author: "Equipo Bambai",
-            category: "Guías",
+            author: t('blog_page.author'),
+            category: t('blog_page.posts.7.category'),
             imageUrl: "https://images.unsplash.com/photo-1557862921-37829c790f19?auto=format&fit=crop&q=80&w=800",
             href: "https://www.bambai.es/blog/instalacion-camara-vigilancia"
         },
         {
-            title: "Barrios más peligrosos de Sevilla",
-            excerpt: "Un análisis de las zonas con mayor índice de incidencias en Sevilla. Información útil para conocer la seguridad de los diferentes barrios...",
+            title: t('blog_page.posts.8.title'),
+            excerpt: t('blog_page.posts.8.excerpt'),
             date: "01 Nov 2024",
-            author: "Equipo Bambai",
-            category: "Seguridad Local",
+            author: t('blog_page.author'),
+            category: t('blog_page.posts.8.category'),
             imageUrl: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&q=80&w=800",
             href: "https://www.bambai.es/blog/barrios-mas-peligrosos-sevilla"
         },
         {
-            title: "Barrio más peligroso de Valencia",
-            excerpt: "Descubre qué zonas de Valencia requieren mayor precaución y qué medidas de seguridad son recomendables si vives en ellas...",
+            title: t('blog_page.posts.9.title'),
+            excerpt: t('blog_page.posts.9.excerpt'),
             date: "28 Oct 2024",
-            author: "Equipo Bambai",
-            category: "Seguridad Local",
+            author: t('blog_page.author'),
+            category: t('blog_page.posts.9.category'),
             imageUrl: "https://images.unsplash.com/photo-1514924013411-cbf25faa35ad?auto=format&fit=crop&q=80&w=800",
             href: "https://www.bambai.es/blog/barrio-mas-peligroso-valencia"
         }
@@ -106,10 +109,10 @@ export const Blog: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-4xl mx-auto mb-16">
                         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                            Blog Bambai
+                            {t('blog_page.hero_title')}
                         </h1>
                         <p className="text-xl text-blue-100">
-                            Consejos de seguridad, guías y novedades para proteger lo que más importa
+                            {t('blog_page.hero_subtitle')}
                         </p>
                     </div>
 
@@ -159,7 +162,7 @@ export const Blog: React.FC = () => {
                                         href={post.href}
                                         className="inline-flex items-center gap-2 text-primary-300 font-semibold text-sm group-hover:gap-3 transition-all duration-300"
                                     >
-                                        Leer más
+                                        {t('blog_page.read_more')}
                                         <ArrowRight className="w-4 h-4" />
                                     </a>
                                 </div>
